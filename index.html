@@ -197,7 +197,7 @@
       map.addControl(new mapboxgl.NavigationControl())
 
       map.on('load', ()=> {
-        fetch('http://ip-api.com/json')
+        fetch('https://freegeoip.app/json/')
           .then(response => response.json())
           // .then(data => { ip_lookup = data })
           .then(data => {
@@ -206,7 +206,7 @@
             $('.greeting').animate({'opacity': 1}, 300)
 
             map.jumpTo({
-              center: [data.lon, data.lat],
+              center: [data.longitude, data.latitude],
               // zoom: 12,
               // minZoom: 8,
               // speed: 4
