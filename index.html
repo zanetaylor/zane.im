@@ -1,6 +1,7 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
     <title>Zane Taylor \\ Creative Web Engineer \\ Portland</title>
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <style>
@@ -10,10 +11,10 @@
       html, body {
         width: 100%;
         height: 100%;
-        overflow-x: hidden;
+        overflow: hidden;
       }
       html {
-        background: url('what-the-hex.png');
+        /* background: url('what-the-hex.png'); */
       }
       body {
         margin: 0;
@@ -23,7 +24,43 @@
         font-family: "Fira Mono", Roboto, Open Sans, Helvetica, Arial, sans;
         font-size: 18px;
         font-weight: 400;
-        background: rgba(245, 245, 245, .85);
+        /* background: rgba(245, 245, 245, .85); */
+      }
+      #map {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        /* opacity: .9; */
+      }
+      .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: .4;
+        background: url('what-the-hex.png');
+      }
+      .view {
+        position: relative;
+        background: rgba(245, 245, 245, .6);
+        height: 100vh;
+        overflow: auto;
+      }
+      .greeting {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        color: #eee;
+        font-size: 0.75rem;
+        text-align: right;
+        padding: .25rem .5rem;
+        background: rgba(0,0,0,.5);
+        border-radius: 1px;
+        opacity: 0;
+      }
+      .greeting .loc {
+        font-weight: 500;
+        background: #7C4EFF;
+        color: #fff;
       }
       .wrap {
         display: flex;
@@ -34,9 +71,10 @@
         /*min-width: 40rem;*/
         max-width: 64rem;
         padding: 4rem;
+        text-shadow: #efefef 1px 1px 0;
       }
       .content {
-        
+
       }
       h1 {
         margin: 0 0 3rem 0;
@@ -55,13 +93,18 @@
         margin: 0 0 3rem 0;
         font-size: 1.75rem;
       }
-      p a {
+      p a,
+      li a {
         position: relative;
         color: #242424;
         text-decoration: none;
         background-size: 100% 300%;
         background-image: linear-gradient(transparent 25px, #7C4EFF 0);
         transition: all .33s;
+        text-shadow: none;
+      }
+      li a {
+        background-image: linear-gradient(transparent 16px, #7C4EFF 0);
       }
    /*   a:before {
         content: "";
@@ -71,26 +114,30 @@
         left: 0;
         width: 100%;
         height: 2px;
-        
+
         transition: all .33s;
       }*/
+      li a:hover,
       p a:hover {
-        color: #efefef;
+        color: #fff;
+        text-shadow: #aaa 1px 1px 1px;
         background-position: -140px;
       }
       ul {
+        float: left;
         list-style: none;
         padding: 0;
+        margin-right: 3rem;
       }
       ul a {
         color: #242424;
         text-decoration: none;
-        border-bottom: 3px solid #7C4EFF;
+        /* border-bottom: 3px solid #7C4EFF; */
       }
-      ul a:hover {
+      /* ul a:hover {
         color: #efefef;
         background: #7C4EFF;
-      }
+      } */
   /*    a:hover:before {
         height: 100%;
       }*/
@@ -98,36 +145,79 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:600,700|Fira+Mono:400,500" rel="stylesheet">
   </head>
   <body>
-    <div class="wrap">
-      <div class="content">
-        <h1><span>Zane Taylor</span> is a creative web &amp; mobile engineer.</h1>
-        <p>He lives in Portland, building stuff with code, data, maps, and OSS. He's usually drinking coffee, riding a bike, hitting the trail, or petting a cat.</p>
-        <h2>Need more?</h2>
-        <p>Go ahead and <a href="mailto:hey@zanetaylor.me">say hello</a> or <a href="https://calendly.com/zanetaylor">schedule a chat</a>.</p>
+    <div id="map"></div>
+    <div class="overlay"></div>
+    <div class="view">
+      <p class="greeting">It looks you're visiting from near <span class="loc"></span>.<br><span class="hi">How's the weather?</span></p>
+      <div class="wrap">
+        <div class="content">
+          <h1><span>Zane Taylor</span> is a creative web &amp; mobile engineer.</h1>
+          <p>He lives in Portland, building stuff with code, data, maps, and open source. He's usually drinking coffee, riding a bike, hitting the trail, or petting a cat.</p>
+          <h2>Need more?</h2>
+          <p>Go ahead and <a target="_blank" href="mailto:hey@zanetaylor.me">say hello</a>, <a target="_blank" href="https://calendly.com/zanetaylor">schedule a chat</a>, or <a target="_blank" href="https://keybase.io/encrypt#zanetaylor">send me a secret message</a>.</p>
 
-        <h3>See also</h3>
-        <ul>
-          <li><a href="/resume">Resume &rarr;</a></li>
-          <li><a href="https://www.linkedin.com/in/iamzanetaylor">LinkedIn &rarr;</a></li>
-          <li><a href="https://github.com/zanetaylor">Github &rarr;</a></li>
-          <li><a href="https://stackoverflow.com/story/zanetaylor">Stack Overflow &rarr;</a></li>
-          <li><a href="https://letterboxd.com/zanetaylor">Letterboxd &rarr;</a></li>
-          <li><a href="https://last.fm/zotterdas">Last.fm &rarr;</a></li>
-        </ul>
+          <h3>See also</h3>
+          <ul>
+            <li><a href="/resume">Resume &rarr;</a></li>
+            <li><a href="https://www.linkedin.com/in/iamzanetaylor">LinkedIn &rarr;</a></li>
+            <li><a href="https://github.com/zanetaylor">Github &rarr;</a></li>
+          </ul>
+          <ul>
+            <li><a href="https://stackoverflow.com/story/zanetaylor">Stack Overflow &rarr;</a></li>
+            <li><a href="https://letterboxd.com/zanetaylor">Letterboxd &rarr;</a></li>
+            <li><a href="https://last.fm/zotterdas">Last.fm &rarr;</a></li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    	<script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
+	    <!-- <script src='https://api.mapbox.com/mapbox.js/plugins/turf/v3.0.11/turf.min.js'></script> -->
+
     <script>
-      // $(function(){
-      //   $(window).on('mousemove', function(){
-      //     var rando1 = Math.floor(Math.random() * 4);
-      //     var rando2 = Math.floor(Math.random() * 4);
-      //     var rando3 = Math.floor(Math.random() * 2);
-      //     $('b').css('text-shadow', rando1 + 'px ' + rando2 + 'px ' + rando3 + 'px #77F9FB, -' + rando2 +'px -' + rando1 + 'px ' + rando3 + 'px #E93E33');
-      //   });
-      // });
+      mapboxgl.accessToken = 'pk.eyJ1Ijoiem90dGVyZGFzIiwiYSI6ImNrNzd2ZTZ6cTAyMTAzbG51eG41dDV5c2QifQ.Gt6NSuWV9kymSGDvs4VlMQ';
+      var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/zotterdas/ckbv7kvf6172m1ivo731ifecs', // stylesheet location
+        // center: [-74.5, 40], // starting position [lng, lat]
+        zoom: 15.5,
+        pitch: 60
+      })
+
+      function rotateCamera(timestamp) {
+        // clamp the rotation between 0 -360 degrees
+        // Divide timestamp by 100 to slow rotation to ~10 degrees / sec
+        map.rotateTo((timestamp / 500) % 360, { duration: 0 });
+        // Request the next frame of the animation.
+        requestAnimationFrame(rotateCamera);
+      }
+
+      map.addControl(new mapboxgl.NavigationControl())
+
+      map.on('load', ()=> {
+        fetch('http://ip-api.com/json')
+          .then(response => response.json())
+          // .then(data => { ip_lookup = data })
+          .then(data => {
+
+            $('.loc').text(data.city)
+            $('.greeting').animate({'opacity': 1}, 300)
+
+            map.jumpTo({
+              center: [data.lon, data.lat],
+              // zoom: 12,
+              // minZoom: 8,
+              // speed: 4
+            })
+
+          })
+      })
+
+      map.once('moveend', ()=> {
+        rotateCamera(0)
+      })
     </script>
   </body>
 </html>
