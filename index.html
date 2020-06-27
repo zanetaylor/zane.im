@@ -26,18 +26,27 @@
         font-weight: 400;
         /* background: rgba(245, 245, 245, .85); */
       }
+      body.dark {
+        color: #eee;
+      }
       #map {
         position: absolute;
         width: 100vw;
         height: 100vh;
         /* opacity: .9; */
       }
+      .mapboxgl-control-container {
+        display: none !important;
+      }
       .overlay {
         position: absolute;
         width: 100%;
         height: 100%;
-        opacity: .4;
-        background: url('what-the-hex.png');
+        opacity: .35;
+        /* background: url('what-the-hex.png'); */
+      }
+      .dark .overlay {
+        opacity: .25;
       }
       .view {
         position: relative;
@@ -45,17 +54,34 @@
         height: 100vh;
         overflow: auto;
       }
-      .greeting {
+      .dark .view {
+        background: rgba(33, 33, 33, .6);
+      }
+      .greet {
         position: absolute;
         top: 4px;
         right: 4px;
         color: #eee;
+        max-width: 475px;
+        /* padding: .25rem .5rem; */
+        /* background: rgba(0,0,0,.5); */
+        /* border-radius: 1px; */
+        /* opacity: 0; */
+      }
+      .greeting {
+        float: right;
+        margin: 0;
+        padding: .2rem .5rem;
         font-size: 0.75rem;
         text-align: right;
-        padding: .25rem .5rem;
         background: rgba(0,0,0,.5);
-        border-radius: 1px;
         opacity: 0;
+      }
+      /* .greeting:first-child {
+        padding-bottom: .2rem;
+      } */
+      .greeting:last-child {
+        padding-top: 0;
       }
       .greeting .loc {
         font-weight: 500;
@@ -72,6 +98,9 @@
         max-width: 64rem;
         padding: 4rem;
         text-shadow: #efefef 1px 1px 0;
+      }
+      .dark .wrap {
+        text-shadow: #111 1px 1px 0;
       }
       .content {
 
@@ -99,12 +128,16 @@
         color: #242424;
         text-decoration: none;
         background-size: 100% 300%;
-        background-image: linear-gradient(transparent 25px, #7C4EFF 0);
-        transition: all .33s;
+        background-image: linear-gradient(transparent 28px, #7C4EFF 0);
+        transition: all .25s;
         text-shadow: none;
       }
+      .dark p a,
+      .dark li a {
+        color: #eee;
+      }
       li a {
-        background-image: linear-gradient(transparent 16px, #7C4EFF 0);
+        background-image: linear-gradient(transparent 19px, #7C4EFF 0);
       }
    /*   a:before {
         content: "";
@@ -143,12 +176,16 @@
       }*/
     </style>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:600,700|Fira+Mono:400,500" rel="stylesheet">
+    <!-- <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet' /> -->
   </head>
   <body>
     <div id="map"></div>
     <div class="overlay"></div>
     <div class="view">
-      <p class="greeting">It looks you're visiting from near <span class="loc"></span>.<br><span class="hi">How's the weather?</span></p>
+      <div class="greet">
+        <p class="greeting">It looks you're visiting from <span class="loc"></span>.</p>
+        <p class="greeting"><span class="hi">How's the weather?</span></p>
+      </div>
       <div class="wrap">
         <div class="content">
           <h1><span>Zane Taylor</span> is a creative web &amp; mobile engineer.</h1>
@@ -172,11 +209,14 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    	<script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@1.24.1/build/global/luxon.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
 	    <!-- <script src='https://api.mapbox.com/mapbox.js/plugins/turf/v3.0.11/turf.min.js'></script> -->
 
     <script>
+      var DateTime = luxon.DateTime
+      var dark = false
+
       mapboxgl.accessToken = 'pk.eyJ1Ijoiem90dGVyZGFzIiwiYSI6ImNrNzd2ZTZ6cTAyMTAzbG51eG41dDV5c2QifQ.Gt6NSuWV9kymSGDvs4VlMQ';
       var map = new mapboxgl.Map({
         container: 'map', // container id
@@ -202,7 +242,30 @@
           // .then(data => { ip_lookup = data })
           .then(data => {
 
-            $('.loc').text(data.city)
+            var time = DateTime.fromObject({zone: data.time_zone})
+            console.log(time)
+
+            if(time.hour > 20 || time.hour < 6) {
+              dark = true
+            }
+
+            if(dark) {
+              $('body').toggleClass('dark')
+              map.setStyle('mapbox://styles/zotterdas/ckbxvs6p12h081inbbgko2edn')
+            }
+
+            if(data.city) {
+              $('.loc').text(data.city)
+            } else if(data.region_name) {
+              $('.loc').text(data.region_name)
+            } else {
+              if(data.country_code == 'US') {
+                $('.loc').text('somewhere in the ' + data.country_name)
+              } else {
+                $('.loc').text('somewhere in ' + data.country_name)
+              }
+            }
+
             $('.greeting').animate({'opacity': 1}, 300)
 
             map.jumpTo({
