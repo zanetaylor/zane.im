@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> -->
+
     <title>Zane Taylor \\ Creative Web Engineer \\ Portland</title>
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <style>
@@ -42,27 +44,29 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        opacity: .35;
+        opacity: .6;
+        background: #efefef
         /* background: url('what-the-hex.png'); */
       }
       .dark .overlay {
-        opacity: .25;
+        opacity: .5;
+        background: #111;
       }
       .view {
         position: relative;
-        background: rgba(245, 245, 245, .6);
+        /* background: rgba(245, 245, 245, .6); */
         height: 100vh;
         overflow: auto;
       }
       .dark .view {
-        background: rgba(33, 33, 33, .6);
+        /* background: rgba(33, 33, 33, .6); */
       }
       .greet {
         position: absolute;
         top: 4px;
         right: 4px;
         color: #eee;
-        max-width: 475px;
+        max-width: 420px;
         /* padding: .25rem .5rem; */
         /* background: rgba(0,0,0,.5); */
         /* border-radius: 1px; */
@@ -115,8 +119,8 @@
       h1 span {
         color: #7C4EFF;
       }
-      h3 {
-        margin: 0;
+      h2, h3 {
+        margin: 0 0 .3rem 0;
       }
       p {
         margin: 0 0 3rem 0;
@@ -160,7 +164,7 @@
         float: left;
         list-style: none;
         padding: 0;
-        margin-right: 3rem;
+        margin: 0 3rem 1rem 0;
       }
       ul a {
         color: #242424;
@@ -189,7 +193,7 @@
       <div class="wrap">
         <div class="content">
           <h1><span>Zane Taylor</span> is a creative web &amp; mobile engineer.</h1>
-          <p>He lives in Portland, building stuff with code, data, maps, and open source. He's usually drinking coffee, riding a bike, hitting the trail, or petting a cat.</p>
+          <p>He lives in Oregon, building stuff with code, data, maps, and open source. He's usually drinking coffee, riding a bike, hitting the trail, or petting a cat.</p>
           <h2>Need more?</h2>
           <p>Go ahead and <a target="_blank" href="mailto:hey@zanetaylor.me">say hello</a>, <a target="_blank" href="https://calendly.com/zanetaylor">schedule a chat</a>, or <a target="_blank" href="https://keybase.io/encrypt#zanetaylor">send him a secret message</a>.</p>
 
@@ -260,7 +264,7 @@
               $('.loc').text(data.region_name)
             } else {
               if(data.country_code == 'US') {
-                $('.loc').text('somewhere in the ' + data.country_name)
+                $('.loc').text('somewhere in the ' + data.country_code)
               } else {
                 $('.loc').text('somewhere in ' + data.country_name)
               }
