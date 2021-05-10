@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> -->
-
     <title>Zane Taylor \\ Creative Web Engineer \\ Portland</title>
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <style>
@@ -14,9 +13,6 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
-      }
-      html {
-        /* background: url('what-the-hex.png'); */
       }
       body {
         margin: 0;
@@ -46,7 +42,6 @@
         height: 100%;
         opacity: .6;
         background: #efefef
-        /* background: url('what-the-hex.png'); */
       }
       .dark .overlay {
         opacity: .6;
@@ -67,10 +62,6 @@
         right: 4px;
         color: #eee;
         max-width: 420px;
-        /* padding: .25rem .5rem; */
-        /* background: rgba(0,0,0,.5); */
-        /* border-radius: 1px; */
-        /* opacity: 0; */
       }
       .greeting {
         float: right;
@@ -85,9 +76,6 @@
       .greeting.active {
         opacity: 1;
       }
-      /* .greeting:first-child {
-        padding-bottom: .2rem;
-      } */
       .greeting:last-child {
         padding-top: 0;
       }
@@ -109,9 +97,6 @@
       }
       .dark .wrap {
         text-shadow: #111 1px 1px 0;
-      }
-      .content {
-
       }
       h1 {
         margin: 0 0 3rem 0;
@@ -147,17 +132,6 @@
       li a {
         background-image: linear-gradient(transparent 19px, #7C4EFF 0);
       }
-   /*   a:before {
-        content: "";
-        position: absolute;
-        z-index: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-
-        transition: all .33s;
-      }*/
       li a:hover,
       p a:hover {
         color: #fff;
@@ -184,7 +158,6 @@
       }*/
     </style>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:700|Fira+Mono:400,500" rel="stylesheet">
-    <!-- <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet' /> -->
   </head>
   <body>
     <div id="map"></div>
@@ -203,7 +176,7 @@
 
           <h3>See also</h3>
           <ul>
-            <li><a href="/resume">Resume &rarr;</a></li>
+            <li><a href="/resume">Resume &rarr;</a> (<a href="/resume.pdf">PDF</a>)</li>
             <li><a href="https://www.linkedin.com/in/iamzanetaylor">LinkedIn &rarr;</a></li>
             <li><a href="https://github.com/zanetaylor">Github &rarr;</a></li>
           </ul>
@@ -239,7 +212,7 @@
 
       var map = new mapboxgl.Map({
         container: 'map', // container id
-        style: 'mapbox://styles/zotterdas/ckbv7kvf6172m1ivo731ifecs', // stylesheet location
+        style: 'mapbox://styles/zotterdas/ckbv7kvf6172m1ivo731ifecs',
         // center: [-74.5, 40], // starting position [lng, lat]
         zoom: 15.5,
         pitch: 60
