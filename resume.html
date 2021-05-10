@@ -9,7 +9,7 @@
 
 	<style>
 	body {
-		background: #efefef;
+		background: #fff;
 		font: 16px 'Fira Mono', Inconsolata, Courier New, serif;
 	  color: #333;
 		line-height: 1.4;
@@ -17,19 +17,20 @@
 		margin-bottom: 100px;
 	}
 	a {
-	  color: #7f23ff;
+	  color: #7C4EFF;
+	  transition: all .25s;
+	}
+	a:hover {
+	  color: #522eb4;
 	}
 	h1,h2,h3,h4 {
-	  color: #7f23ff;
+	  color: #7C4EFF;
 	  font-family: 'Work Sans', Arial, Helvetica, sans-serif;
 	}
 	h1 {
 	  margin: 0;
 	  line-height: 1.25;
 	  font-size: 4.25rem;
-	  background: -webkit-linear-gradient(#7f23ff, #9367FC);
-	  -webkit-background-clip: text;
-	  -webkit-text-fill-color: transparent;
 	}
 	h2 {
 	  margin-bottom: 3rem;
@@ -41,7 +42,7 @@
 	#title {
 	  margin: 0 0 1.6rem 0;
 	  font-weight: normal;
-	  color: #777;
+	  color: #888;
 	}
 	em {
 		color: #999;
@@ -52,20 +53,23 @@
 	ul {
 		margin-bottom: 0;
 	}
+	ul li {
+	  margin: 0 0 .25rem 0;
+	}
 	header, section {
 	  margin: 0 auto;
-	  max-width: 680px;
+	  padding: 0 2rem;
+	  max-width: 54rem;
 	}
 	section {
-	  margin-bottom: 2em;
-	  padding: 0 20px;
+	  margin-bottom: 3rem;
 	}
 	blockquote {
 		margin: 0;
-		margin-bottom: 1em;
+		margin-bottom: 1rem;
 	}
 	.item {
-		margin-bottom: 1em;
+		margin-bottom: 1rem;
 	}
 	#resume {
 		/*padding: 0 20px;*/
@@ -74,7 +78,7 @@
 		/*margin-bottom: -10px;*/
 	}
 	#basics h3 {
-		margin-top: 1.5em;
+		margin-top: 1.5rem;
 	}
 	#basics .contact {
 	  margin: 0 0 2.6rem 0;
@@ -103,7 +107,12 @@
 	}
 	#skills .item {
 		float: left;
-		width: 50%;
+		width: 33%;
+	}
+	#work .item .details {
+	  list-style: none;
+	  margin: 0;
+	  padding: 0;
 	}
 	hr {
 	  margin: 0 0 -4.75rem 0;
@@ -125,18 +134,18 @@
 	<div id="resume">
 			<header>
 		    <h1>Zane Taylor</h1>
-		    <h2 id="title">Creative Web &amp; Mobile Engineer</h2> 
+		    <h2 id="title">Creative Web &amp; Mobile Engineer</h2>
 		  </header>
 		  <hr class="contact-bg">
 			<section id="basics">
 				<div class="contact">
 		  		<div class="website">
 		  			<strong>Website</strong>
-		  			<a href="https://zanetaylor.me">https://zanetaylor.me</a>
+		  			<a href="https://zane.im">https://zane.im</a>
 		  		</div>
 		  		<div class="email">
 		  			<strong>Email</strong>
-		  			zane@zanetaylor.me
+		  			zanetaylor@pm.me
 		  		</div>
 		  		<div class="phone">
 		  			<strong>Phone</strong>
@@ -150,7 +159,7 @@
 		      </div>
 				</div>
 				<div class="summary">
-					<p><p>Accomplished web engineer with over a decade of experience in the creative agency industry. As a team member, freelancer, co-founder, and manager, led and contributed to a wide array of projects for diverse clients.</p><p>Advocate of open source tools and the community that supports them, with a deep interest in impactful, mission-driven work that leverages digital technology to elevate causes and organizations whose work is about more than profit.</p></p>
+					<p><p>Accomplished engineer with over a decade of full-stack and front-end experience building for the public web and mobile devices. As a team member, freelancer, co-founder, and manager, has led and contributed to a wide array of projects for diverse customers and clients.</p><p>Advocate of open source tools and the community that supports them, with a deep interest in impactful, mission-driven work that leverages digital technology to elevate causes and organizations whose work is about more than profit.</p></p>
 				</div>
 				<h3>Profiles</h3>
 				<div class="profiles">
@@ -184,83 +193,91 @@
 				<h3 class="name">
 					Alta Planning + Design
 				</h3>
-				<div class="date">
-					<span class="startDate">
-						November 2018
-					</span>
-					<span class="endDate">
-						- Present
-					</span>
-				</div>
-				<div class="position">
-					Web + Digital Team Leader
-				</div>
-				<div class="website">
-					<a href="https://altago.com">https://altago.com</a>
-				</div>
+				<ul class="details">
+					<li class="date">
+						<span class="startDate">
+							November 2018
+						</span>
+						<span class="endDate">
+							- Present
+						</span>
+					</li>
+					<li class="position">
+						Web + Digital Team Leader
+					</li>
+					<li class="website">
+						<a href="https://altago.com">https://altago.com</a>
+					</li>
+				</ul>
 				<div class="summary">
-					<p></p>
+					<p>Led the development of all web-based projects for both client projects and internal tooling and support. Coordinated and collaborated with both non-technical creative team members and industry discipline expert staff to develop highly custom and technically mature web products to support and advanced a range of urban planning and design projects. Collaborated with civic analytics team to plan and develop in-house data science infrastructure and visualization tools. Established, implemented, and documented web & digital best practices and fostered the growth of the team and its strategic role.</p>
 				</div>
 			</div>
 			<div class="item">
 				<h3 class="name">
 					Totally
 				</h3>
-				<div class="date">
-					<span class="startDate">
-						August 2014
-					</span>
-					<span class="endDate">
-						- November 2018
-					</span>
-				</div>
-				<div class="position">
-					Founding Partner &amp; Technical Director
-				</div>
-				<div class="website">
-					<a href="https://totally.agency">https://totally.agency</a>
-				</div>
+				<ul class="details">
+					<li class="date">
+						<span class="startDate">
+							August 2014
+						</span>
+						<span class="endDate">
+							- August 2018
+						</span>
+					</li>
+					<li class="position">
+						Founding Partner &amp; Technical Director
+					</li>
+					<li class="website">
+						<a href="https://totally.agency">https://totally.agency</a>
+					</li>
+				</ul>
 				<div class="summary">
-					<p>Conceptualized, planned, and executed digital identity and web projects for brands, businesses, and non-profits of all stripes, emphasizing content- and user- centric approaches to design and development, crafting branded platforms to further clients' business, marketing, and culture goals.</p><p>Collaborated with clients from concept through final delivery. Managed local and remote development teams, outlined project requirements and delivery standards, performed code and QA reviews, and collaborated with junior developers to address project needs and client feedback.</p>
+					<p>Conceptualized, planned, and executed digital identity and web projects for brands, businesses, and non-profits of all stripes, emphasizing content- and user- centric approaches to design and development, crafting branded platforms to further clients' business, marketing, and culture goals. Collaborated with clients from concept through final delivery. Managed local and remote development teams, outlined project requirements and delivery standards, performed code and QA reviews, and collaborated with junior developers to address project needs and client feedback.</p>
 				</div>
 			</div>
 			<div class="item">
 				<h3 class="name">
 					Total Design Shop
 				</h3>
-				<div class="date">
-					<span class="startDate">
-						September 2011
-					</span>
-					<span class="endDate">
-						- Present
-					</span>
-				</div>
-				<div class="position">
-					Web Developer &amp; Designer
-				</div>
-				<div class="website">
-					<a href="https://www.totaldesignshop.com">https://www.totaldesignshop.com</a>
-				</div>
+				<ul class="details">
+					<li class="date">
+						<span class="startDate">
+							September 2011
+						</span>
+						<span class="endDate">
+							- Present
+						</span>
+					</li>
+					<li class="position">
+						Web Developer &amp; Designer
+					</li>
+					<li class="website">
+						<a href="https://www.totaldesignshop.com">https://www.totaldesignshop.com</a>
+					</li>
+				</ul>
 				<div class="summary">
-					<p>Designed, developed, and maintained award-winning custom websites and applications for a variety of commercial and non-profit clients, leveraging modern front-end frameworks, CMS platforms, build processes, and cloud infrastructure.</p><p>Produced static mockups, prototyped, and iterated original visual design concepts, incorporating project specs and client feedback, to produce tailored, branded web experiences.</p>
+					<p>Designed, developed, and maintained award-winning custom websites and applications for a variety of commercial and non-profit clients, leveraging modern front-end frameworks, CMS platforms, build processes, and cloud infrastructure. Produced static mockups, prototyped, and iterated original visual design concepts, incorporating project specs and client feedback, to produce tailored, branded web experiences.</p>
 				</div>
 			</div>
 			<div class="item">
 				<h3 class="name">
 					Freelance
 				</h3>
-				<div class="date">
-					<span class="startDate">
-						January 2009
-					</span>
-					<span class="endDate">
-						- December 2015
-					</span>
-				</div>
-				<div class="position">
-					Creative Web Engineer
-				</div>
+				<ul class="details">
+					<li class="date">
+						<span class="startDate">
+							January 2009
+						</span>
+						<span class="endDate">
+							- December 2015
+						</span>
+					</li>
+					<li class="position">
+						Creative Web Engineer
+					</li>
+				</ul>
 				<div class="summary">
 					<p>Developed comprehensive web experiences with an emphasis on user experience, mobile-first and responsive design, third party integrations, content + brand strategy, and email + social engagement. Engineered and integrated tailored web and content platforms with back- and front-end frameworks and modern content management systems.</p>
 				</div>
@@ -271,22 +288,22 @@
     	<h2>Skills</h2>
     	<div class="item">
     		<div class="name">
+    			Front-end Development
+    		</div>
+    	</div>
+    	<div class="item">
+    		<div class="name">
+    			Full-stack Development
+    		</div>
+    	</div>
+    	<div class="item">
+    		<div class="name">
     			JavaScript
     		</div>
     	</div>
     	<div class="item">
     		<div class="name">
-    			WordPress
-    		</div>
-    	</div>
-    	<div class="item">
-    		<div class="name">
     			PHP
-    		</div>
-    	</div>
-    	<div class="item">
-    		<div class="name">
-    			Front-end Development
     		</div>
     	</div>
     	<div class="item">
@@ -297,6 +314,11 @@
     	<div class="item">
     		<div class="name">
     			CSS
+    		</div>
+    	</div>
+    	<div class="item">
+    		<div class="name">
+    			SASS
     		</div>
     	</div>
     	<div class="item">
@@ -316,7 +338,7 @@
     	</div>
     	<div class="item">
     		<div class="name">
-    			SASS
+    			WordPress
     		</div>
     	</div>
     	<div class="item">
@@ -332,11 +354,6 @@
     	<div class="item">
     		<div class="name">
     			Laravel
-    		</div>
-    	</div>
-    	<div class="item">
-    		<div class="name">
-    			E-commerce
     		</div>
     	</div>
     	<div class="item">
@@ -374,10 +391,41 @@
     			Sketch
     		</div>
     	</div>
+    	<div class="item">
+    		<div class="name">
+    			Figma
+    		</div>
+    	</div>
+    	<div class="item">
+    		<div class="name">
+    			Accessibility
+    		</div>
+    	</div>
+    	<div class="item">
+    		<div class="name">
+    			GIS / Mapping
+    		</div>
+    	</div>
     </section>
 		<hr>
 		<section id="volunteer">
 			<h2>Volunteer</h2>
+			<div class="item">
+				<h3 class="company">
+					DeTrash Portland
+				</h3>
+				<div class="date">
+					<span class="startDate">
+						2020
+					</span>
+					<span class="endDate">
+						- Present
+					</span>
+				</div>
+				<div class="position">
+					Volunteer
+				</div>
+			</div>
 			<div class="item">
 				<h3 class="company">
 					Trailkeepers of Oregon
