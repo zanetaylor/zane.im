@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.8;
+  font-family: "Fira Mono", Roboto, Open Sans, Helvetica, Arial, sans;
+  font-size: 18px;
+  font-weight: 400;
+  /* background: rgba(245, 245, 245, .85); */
+}
+body.dark {
+  color: #eee;
+}
+#map {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  /* opacity: .9; */
+}
+.mapboxgl-control-container {
+  display: none !important;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: .6;
+  background: #efefef
+}
+.dark .overlay {
+  opacity: .6;
+  background: #111;
+}
+.view {
+  position: relative;
+  /* background: rgba(245, 245, 245, .6); */
+  height: 100vh;
+  overflow: auto;
+}
+.dark .view {
+  /* background: rgba(33, 33, 33, .6); */
+}
+.greet {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  color: #eee;
+  max-width: 420px;
+}
+.greeting {
+  float: right;
+  margin: 0;
+  padding: .2rem .5rem;
+  font-size: 0.75rem;
+  text-align: right;
+  background: rgba(0,0,0,.5);
+  opacity: 0;
+  transition: all .3s;
+}
+.greeting.active {
+  opacity: 1;
+}
+.greeting:last-child {
+  padding-top: 0;
+}
+.greeting .loc {
+  font-weight: 500;
+  background: #7C4EFF;
+  color: #fff;
+}
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  margin: 0 auto;
+  /*min-width: 40rem;*/
+  max-width: 64rem;
+  padding: 4rem;
+  text-shadow: #efefef 1px 1px 0;
+}
+.dark .wrap {
+  text-shadow: #111 1px 1px 0;
+}
+h1 {
+  margin: 0 0 3rem 0;
+  line-height: 1.4;
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "Work Sans", Roboto, Open Sans, Helvetica, Arial, sans;
+}
+h1 span {
+  color: #7C4EFF;
+}
+h2, h3 {
+  margin: 0 0 .3rem 0;
+}
+p {
+  margin: 0 0 3rem 0;
+  font-size: 1.75rem;
+}
+p a,
+li a {
+  position: relative;
+  color: #242424;
+  text-decoration: none;
+  background-size: 100% 300%;
+  background-image: linear-gradient(transparent 28px, #7C4EFF 0);
+  transition: all .25s;
+  text-shadow: none;
+}
+.dark p a,
+.dark li a {
+  color: #eee;
+}
+li a {
+  background-image: linear-gradient(transparent 19px, #7C4EFF 0);
+}
+li a:hover,
+p a:hover {
+  color: #fff;
+  text-shadow: #aaa 1px 1px 1px;
+  background-position: -140px;
+}
+ul {
+  float: left;
+  list-style: none;
+  padding: 0;
+  margin: 0 3rem 1rem 0;
+}
+ul a {
+  color: #242424;
+  text-decoration: none;
+  /* border-bottom: 3px solid #7C4EFF; */
+}
+/* ul a:hover {
+  color: #efefef;
+  background: #7C4EFF;
+} */
+/*    a:hover:before {
+  height: 100%;
+}*/
