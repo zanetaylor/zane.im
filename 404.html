@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> -->
+    <title>Zane Taylor \\ Creative Web Engineer \\ Portland</title>
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:700|Fira+Mono:400,500" rel="stylesheet">
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <div class="view">
+      <div class="wrap">
+        <div class="content">
+          <h1>404</h1>
+          <p class="oops">Whatever you're looking for, it's not here.</p>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cash/8.0.0/cash.min.js"></script>
+    <script>
+      var dark = false
+      var time = new Date()
+
+      if(time.getHours() > 17 || time.getHours() < 6) {
+        dark = true
+      }
+
+      if(dark) {
+        $('body').toggleClass('dark')
+        map.setStyle('mapbox://styles/zotterdas/ckbxvs6p12h081inbbgko2edn')
+      }
+    </script>
+  </body>
+</html>
