@@ -1,0 +1,14 @@
+---
+import { SITE } from '$/config'
+import BaseHead from '$/components/BaseHead.astro'
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead title={ SITE.title }/>
+    </head>
+    <body>
+        <slot/>
+    </body>
+</html>
