@@ -1,20 +1,27 @@
 <template>
-  <div id="map"></div>
+  <div id="map" ref="map"></div>
   <div class="overlay"></div>
   <div class="greet" :class="{ active: loc }">
-    <p class="greeting">It looks like you're visiting from <span class="loc"></span>.</p>
+    <p class="greeting">It looks like you're visiting from <span class="loc">{{ loc }}</span>.</p>
     <p class="greeting"><span class="hi">How's the weather?</span></p>
 </div>
 </template>
 
 <script>
 
-  import { mapboxgl } from 'mapbox-gl'
+  import * as mbgl from 'mapbox-gl'
+  // const mapboxgl = require('mapbox-gl')
   // import $ from 'cash-dom'
 
   export default {
     data() {
       return {
+        accessToken: 'pk.eyJ1Ijoiem90dGVyZGFzIiwiYSI6ImNrNzd2ZTZ6cTAyMTAzbG51eG41dDV5c2QifQ.Gt6NSuWV9kymSGDvs4VlMQ',
+        mapStyle: 'mapbox://styles/zotterdas/ckbv7kvf6172m1ivo731ifecs',
+        latitude: 35.4832668,
+        longitude: 12.9491635,
+        zoom: 15.5,
+        pitch: 60,
         loc: '',
         mapLoaded: false
       }
@@ -30,27 +37,27 @@
         dark = true
       }
 
-      const accessToken = 'pk.eyJ1Ijoiem90dGVyZGFzIiwiYSI6ImNrNzd2ZTZ6cTAyMTAzbG51eG41dDV5c2QifQ.Gt6NSuWV9kymSGDvs4VlMQ';
-
-      this.map = new mapboxgl.Map({
-        accessToken: accessToken,
-        container: 'map', // container id
-        style: 'mapbox://styles/zotterdas/ckbv7kvf6172m1ivo731ifecs',
-        // center: [-74.5, 40], // starting position [lng, lat]
-        zoom: 15.5,
-        pitch: 60
+      this.map = new mbgl.Map({
+        accessToken: this.accessToken,
+        container: this.$refs.map,
+        style: this.mapStyle,
+        center: [this.longitude, this.latitude],
+        zoom: this.zoom,
+        pitch: this.pitch,
       })
 
       if(dark) {
         // $('body').toggleClass('dark')
+        const body = document.querySelector('body')
+        body.classList.add('dark')
         this.map.setStyle('mapbox://styles/zotterdas/ckbxvs6p12h081inbbgko2edn')
       }
 
-      this.map.addControl(new mapboxgl.NavigationControl())
+      this.map.addControl(new mbgl.NavigationControl())
 
       this.map.on('load', ()=> {
 
-        const locationPromise = fetch('https://freegeoip.app/json/')
+        const locPromise = fetch('https://freegeoip.app/json/')
           .then(response => response.json())
           // .then(data => { ip_lookup = data })
           .then(data => {
@@ -67,13 +74,8 @@
               }
             }
 
-            // $('.greeting').toggleClass('active')
-
             this.map.jumpTo({
               center: [data.longitude, data.latitude],
-              // zoom: 12,
-              // minZoom: 8,
-              // speed: 4
             })
 
           })
@@ -86,14 +88,14 @@
       // })
 
       this.map.once('moveend', ()=> {
-        this.rotateCamera(map, 0)
+        this.rotateCamera(0)
       })
     },
     methods: {
-      rotateCamera(map, timestamp) {
+      rotateCamera(timestamp) {
         // clamp the rotation between 0 -360 degrees
         // Divide timestamp by 100 to slow rotation to ~10 degrees / sec
-        map.rotateTo((timestamp / 500) % 360, { duration: 0 });
+        this.map.rotateTo((timestamp / 500) % 360, { duration: 0 });
         // Request the next frame of the animation.
         window.requestAnimationFrame(this.rotateCamera);
       }
@@ -138,6 +140,12 @@ body.dark .overlay {
   right: .75rem;
   color: #eee;
   max-width: 420px;
+  opacity: 0;
+  transition: all .3s;
+
+  &.active {
+    opacity: 1;
+  }
 }
 .greeting {
   float: right;
@@ -146,11 +154,6 @@ body.dark .overlay {
   font-size: 0.75rem;
   text-align: right;
   background: rgba(0,0,0,.5);
-  opacity: 0;
-  transition: all .3s;
-}
-.greeting.active {
-  opacity: 1;
 }
 .greeting:last-child {
   padding-top: 0;

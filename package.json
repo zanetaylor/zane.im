@@ -1,5 +1,5 @@
 {
-  "name": "@example/blog",
+  "name": "zane.im",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -9,8 +9,15 @@
     "preview": "astro preview"
   },
   "devDependencies": {
+    "@astrojs/tailwind": "^0.1.1",
     "@astrojs/vue": "^0.0.2",
+    "@tailwindcss/forms": "^0.5.0",
+    "@tailwindcss/typography": "^0.5.2",
+    "@types/mapbox-gl": "^2.6.3",
     "astro": "^1.0.0-beta.5",
+    "mapbox-gl": "^2.8.0",
+    "sass": "^1.50.0",
+    "tailwindcss": "^3.0.23",
     "vue": "^3.2.30"
   },
   "dependencies": {}
