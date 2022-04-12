@@ -10,8 +10,6 @@
 <script>
 
   import * as mbgl from 'mapbox-gl'
-  // const mapboxgl = require('mapbox-gl')
-  // import $ from 'cash-dom'
 
   export default {
     data() {
