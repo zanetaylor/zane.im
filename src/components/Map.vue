@@ -29,7 +29,7 @@ export default {
     this.map = null;
   },
   mounted() {
-    let dark = true
+    let dark = false
     let time = new Date()
 
     if(time.getHours() > 17 || time.getHours() < 6) {
