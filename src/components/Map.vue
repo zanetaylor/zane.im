@@ -29,7 +29,7 @@ export default {
     this.map = null;
   },
   mounted() {
-    let dark = false
+    let dark = true
     let time = new Date()
 
     if(time.getHours() > 17 || time.getHours() < 6) {
@@ -121,9 +121,11 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #efefef;
-  opacity: .6;
-  transition: all .3s;
+  // background: #efefef;
+  background: rgb(239,239,239);
+  background: linear-gradient(180deg, rgba(239,239,239,0.4) 0%, rgba(255,255,255,1) 90%);
+  // opacity: .6;
+  // transition: all .3s;
 
   // &.loaded {
   //   opacity: .6;
@@ -131,7 +133,9 @@ export default {
 }
 
 body.dark .overlay {
-  background: #111;
+  // background: #111;
+  background: rgb(17,17,17);
+  background: linear-gradient(180deg, rgba(17,17,17,0.3) 0%, rgba(17,17,17,1) 90%); 
 }
 
 .greet {
