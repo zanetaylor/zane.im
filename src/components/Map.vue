@@ -9,96 +9,98 @@
 
 <script>
 
-  import * as mbgl from 'mapbox-gl'
+// import * as mbgl from 'mapbox-gl'
 
-  export default {
-    data() {
-      return {
-        accessToken: 'pk.eyJ1Ijoiem90dGVyZGFzIiwiYSI6ImNrNzd2ZTZ6cTAyMTAzbG51eG41dDV5c2QifQ.Gt6NSuWV9kymSGDvs4VlMQ',
-        mapStyle: 'mapbox://styles/zotterdas/ckbv7kvf6172m1ivo731ifecs',
-        latitude: 35.4832668,
-        longitude: 12.9491635,
-        zoom: 15.5,
-        pitch: 60,
-        loc: '',
-        mapLoaded: false
-      }
-    },
-    created() {
-      this.map = null;
-    },
-    mounted() {
-      let dark = false
-      let time = new Date()
+export default {
 
-      if(time.getHours() > 17 || time.getHours() < 6) {
-        dark = true
-      }
+  data() {
+    return {
+      accessToken: 'pk.eyJ1Ijoiem90dGVyZGFzIiwiYSI6ImNrNzd2ZTZ6cTAyMTAzbG51eG41dDV5c2QifQ.Gt6NSuWV9kymSGDvs4VlMQ',
+      mapStyle: 'mapbox://styles/zotterdas/ckbv7kvf6172m1ivo731ifecs',
+      latitude: 35.4832668,
+      longitude: 12.9491635,
+      zoom: 15.5,
+      pitch: 60,
+      loc: '',
+      mapLoaded: false
+    }
+  },
+  created() {
+    this.map = null;
+  },
+  // mounted() {
+  //   let dark = false
+  //   let time = new Date()
 
-      this.map = new mbgl.Map({
-        accessToken: this.accessToken,
-        container: this.$refs.map,
-        style: this.mapStyle,
-        center: [this.longitude, this.latitude],
-        zoom: this.zoom,
-        pitch: this.pitch,
-      })
+  //   if(time.getHours() > 17 || time.getHours() < 6) {
+  //     dark = true
+  //   }
 
-      if(dark) {
-        // $('body').toggleClass('dark')
-        const body = document.querySelector('body')
-        body.classList.add('dark')
-        this.map.setStyle('mapbox://styles/zotterdas/ckbxvs6p12h081inbbgko2edn')
-      }
+  //   this.map = new mbgl.Map({
+  //     accessToken: this.accessToken,
+  //     container: this.$refs.map,
+  //     style: this.mapStyle,
+  //     center: [this.longitude, this.latitude],
+  //     zoom: this.zoom,
+  //     pitch: this.pitch,
+  //   })
 
-      this.map.addControl(new mbgl.NavigationControl())
+  //   if(dark) {
+  //     // $('body').toggleClass('dark')
+  //     const body = document.querySelector('body')
+  //     body.classList.add('dark')
+  //     this.map.setStyle('mapbox://styles/zotterdas/ckbxvs6p12h081inbbgko2edn')
+  //   }
 
-      this.map.on('load', ()=> {
+  //   this.map.addControl(new mbgl.NavigationControl())
 
-        const locPromise = fetch('https://freegeoip.app/json/')
-          .then(response => response.json())
-          // .then(data => { ip_lookup = data })
-          .then(data => {
+  //   this.map.on('load', ()=> {
 
-            if(data.city) {
-              this.loc = data.city
-            } else if(data.region_name) {
-              this.loc = data.region_name
-            } else {
-              if(data.country_code == 'US') {
-                this.loc = 'somewhere in the ' + data.country_code
-              } else {
-                this.loc = 'somewhere in ' + data.country_name
-              }
-            }
+  //     const locPromise = fetch('https://freegeoip.app/json/')
+  //       .then(response => response.json())
+  //       // .then(data => { ip_lookup = data })
+  //       .then(data => {
 
-            this.map.jumpTo({
-              center: [data.longitude, data.latitude],
-            })
+  //         if(data.city) {
+  //           this.loc = data.city
+  //         } else if(data.region_name) {
+  //           this.loc = data.region_name
+  //         } else {
+  //           if(data.country_code == 'US') {
+  //             this.loc = 'somewhere in the ' + data.country_code
+  //           } else {
+  //             this.loc = 'somewhere in ' + data.country_name
+  //           }
+  //         }
 
-          })
-      })
+  //         this.map.jumpTo({
+  //           center: [data.longitude, data.latitude],
+  //         })
 
-      // map.on('render', ()=> {
-      //   if(map.loaded()) {
-      //     $('.overlay').addClass('loaded')
-      //   }
-      // })
+  //       })
+  //   })
 
-      this.map.once('moveend', ()=> {
-        this.rotateCamera(0)
-      })
-    },
-    methods: {
-      rotateCamera(timestamp) {
-        // clamp the rotation between 0 -360 degrees
-        // Divide timestamp by 100 to slow rotation to ~10 degrees / sec
-        this.map.rotateTo((timestamp / 500) % 360, { duration: 0 });
-        // Request the next frame of the animation.
-        window.requestAnimationFrame(this.rotateCamera);
-      }
+  //   // map.on('render', ()=> {
+  //   //   if(map.loaded()) {
+  //   //     $('.overlay').addClass('loaded')
+  //   //   }
+  //   // })
+
+  //   this.map.once('moveend', ()=> {
+  //     this.rotateCamera(0)
+  //   })
+  // },
+  methods: {
+    rotateCamera(timestamp) {
+      // clamp the rotation between 0 -360 degrees
+      // Divide timestamp by 100 to slow rotation to ~10 degrees / sec
+      this.map.rotateTo((timestamp / 500) % 360, { duration: 0 });
+      // Request the next frame of the animation.
+      window.requestAnimationFrame(this.rotateCamera);
     }
   }
+  
+}
 
 </script>
 
