@@ -9,7 +9,7 @@
 
 <script>
 
-// import * as mbgl from 'mapbox-gl'
+import * as mbgl from 'mapbox-gl'
 
 export default {
 
@@ -28,68 +28,68 @@ export default {
   created() {
     this.map = null;
   },
-  // mounted() {
-  //   let dark = false
-  //   let time = new Date()
+  mounted() {
+    let dark = false
+    let time = new Date()
 
-  //   if(time.getHours() > 17 || time.getHours() < 6) {
-  //     dark = true
-  //   }
+    if(time.getHours() > 17 || time.getHours() < 6) {
+      dark = true
+    }
 
-  //   this.map = new mbgl.Map({
-  //     accessToken: this.accessToken,
-  //     container: this.$refs.map,
-  //     style: this.mapStyle,
-  //     center: [this.longitude, this.latitude],
-  //     zoom: this.zoom,
-  //     pitch: this.pitch,
-  //   })
+    this.map = new mbgl.Map({
+      accessToken: this.accessToken,
+      container: this.$refs.map,
+      style: this.mapStyle,
+      center: [this.longitude, this.latitude],
+      zoom: this.zoom,
+      pitch: this.pitch,
+    })
 
-  //   if(dark) {
-  //     // $('body').toggleClass('dark')
-  //     const body = document.querySelector('body')
-  //     body.classList.add('dark')
-  //     this.map.setStyle('mapbox://styles/zotterdas/ckbxvs6p12h081inbbgko2edn')
-  //   }
+    if(dark) {
+      // $('body').toggleClass('dark')
+      const body = document.querySelector('body')
+      body.classList.add('dark')
+      this.map.setStyle('mapbox://styles/zotterdas/ckbxvs6p12h081inbbgko2edn')
+    }
 
-  //   this.map.addControl(new mbgl.NavigationControl())
+    this.map.addControl(new mbgl.NavigationControl())
 
-  //   this.map.on('load', ()=> {
+    this.map.on('load', ()=> {
 
-  //     const locPromise = fetch('https://freegeoip.app/json/')
-  //       .then(response => response.json())
-  //       // .then(data => { ip_lookup = data })
-  //       .then(data => {
+      const locPromise = fetch('https://freegeoip.app/json/')
+        .then(response => response.json())
+        // .then(data => { ip_lookup = data })
+        .then(data => {
 
-  //         if(data.city) {
-  //           this.loc = data.city
-  //         } else if(data.region_name) {
-  //           this.loc = data.region_name
-  //         } else {
-  //           if(data.country_code == 'US') {
-  //             this.loc = 'somewhere in the ' + data.country_code
-  //           } else {
-  //             this.loc = 'somewhere in ' + data.country_name
-  //           }
-  //         }
+          if(data.city) {
+            this.loc = data.city
+          } else if(data.region_name) {
+            this.loc = data.region_name
+          } else {
+            if(data.country_code == 'US') {
+              this.loc = 'somewhere in the ' + data.country_code
+            } else {
+              this.loc = 'somewhere in ' + data.country_name
+            }
+          }
 
-  //         this.map.jumpTo({
-  //           center: [data.longitude, data.latitude],
-  //         })
+          this.map.jumpTo({
+            center: [data.longitude, data.latitude],
+          })
 
-  //       })
-  //   })
+        })
+    })
 
-  //   // map.on('render', ()=> {
-  //   //   if(map.loaded()) {
-  //   //     $('.overlay').addClass('loaded')
-  //   //   }
-  //   // })
+    // map.on('render', ()=> {
+    //   if(map.loaded()) {
+    //     $('.overlay').addClass('loaded')
+    //   }
+    // })
 
-  //   this.map.once('moveend', ()=> {
-  //     this.rotateCamera(0)
-  //   })
-  // },
+    this.map.once('moveend', ()=> {
+      this.rotateCamera(0)
+    })
+  },
   methods: {
     rotateCamera(timestamp) {
       // clamp the rotation between 0 -360 degrees
