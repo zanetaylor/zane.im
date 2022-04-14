@@ -80,12 +80,6 @@ export default {
         })
     })
 
-    // map.on('render', ()=> {
-    //   if(map.loaded()) {
-    //     $('.overlay').addClass('loaded')
-    //   }
-    // })
-
     this.map.once('moveend', ()=> {
       this.rotateCamera(0)
     })
@@ -124,48 +118,44 @@ export default {
   // background: #efefef;
   background: rgb(239,239,239);
   background: linear-gradient(180deg, rgba(239,239,239,0.4) 0%, rgba(255,255,255,1) 90%);
-  // opacity: .6;
-  // transition: all .3s;
-
-  // &.loaded {
-  //   opacity: .6;
-  // }
 }
 
-body.dark .overlay {
-  // background: #111;
-  background: rgb(17,17,17);
-  background: linear-gradient(180deg, rgba(17,17,17,0.3) 0%, rgba(17,17,17,1) 90%); 
+body.dark {
+  .overlay {
+    // background: #111;
+    background: rgb(17,17,17);
+    background: linear-gradient(180deg, rgba(17,17,17,0.3) 0%, rgba(17,17,17,1) 90%); 
+  }
+  .greet {
+    color: #eee;
+  }
 }
 
 .greet {
   position: fixed;
   top: .75rem;
   right: .75rem;
-  color: #eee;
+  color: #222;
   max-width: 420px;
   opacity: 0;
   transition: all .3s;
 
   &.active {
-    opacity: 1;
+    opacity: .75;
   }
 }
 .greeting {
   float: right;
   margin: 0;
-  padding: .2rem .5rem;
+  // padding: .2rem .5rem;
   font-size: 0.75rem;
   text-align: right;
-  background: rgba(0,0,0,.5);
-}
-.greeting:last-child {
-  padding-top: 0;
-}
-.greeting .loc {
-  font-weight: 500;
-  background: #7C4EFF;
-  color: #fff;
-}
+
+  .loc {
+    font-weight: 500;
+    background: #7C4EFF;
+    color: #eee;
+  }
+} 
 
 </style>

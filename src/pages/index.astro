@@ -19,11 +19,6 @@ import Map from '../components/Map.vue'
           <li><a href="https://www.linkedin.com/in/iamzanetaylor">LinkedIn &rarr;</a></li>
           <li><a href="https://github.com/zanetaylor">Github &rarr;</a></li>
         </ul>
-        <ul>
-          <li><a href="https://stackoverflow.com/story/zanetaylor">Stack Overflow &rarr;</a></li>
-          <li><a href="https://letterboxd.com/zanetaylor">Letterboxd &rarr;</a></li>
-          <li><a href="https://last.fm/zotterdas">Last.fm &rarr;</a></li>
-        </ul>
       </div>
     </div>
   </div>
@@ -55,18 +50,33 @@ body.dark {
   height: 100vh;
   overflow: auto;
 }
+
+@keyframes welcome {
+  0% {
+      opacity: 0;
+      transform: translateY(90%) rotateX(25deg);
+  }
+  100% {
+      opacity: .9;
+      transform: translateY(0) rotateX(0);
+  }
+}
 .wrap {
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
   min-height: 100%;
   // margin: 0 auto;
   /*min-width: 40rem;*/
   max-width: 80rem;
   // padding: 4rem;
+  overflow: hidden;
   opacity: .9;
 
-  @apply pt-28 pb-12 px-12;
+  @apply pt-28 pb-20 px-12;
+
+  perspective: 50vh;
+}
+
+.content {
+  animation: .5s cubic-bezier(0.83, 0, 0.17, 1) .75s 1 welcome;
 }
 h1 {
   margin: 0 0 3rem 0;
@@ -107,6 +117,9 @@ li a {
 body.dark p a,
 body.dark li a {
   color: #eee;
+}
+li {
+  margin: 0 0 .5rem 0;
 }
 li a {
   background-image: linear-gradient(transparent 19px, #7C4EFF 0);
