@@ -20,7 +20,7 @@ export default {
       latitude: 35.4832668,
       longitude: 12.9491635,
       zoom: 15.5,
-      pitch: 60,
+      pitch: 65,
       loc: '',
       mapLoaded: false
     }
