@@ -33,9 +33,12 @@ export default {
     this.map = null;
   },
   mounted() {
-    const apiKey = "jB11OR9dfQrR5Kz4It89";
-    const mapStyleLight = `https://api.maptiler.com/maps/d822cf9a-e7bd-46ec-ab0a-75dc9bf16d32/style.json?key=${apiKey}`;
-    const mapStyleDark = `https://api.maptiler.com/maps/ed916e60-ca24-40fe-9984-6b1fa0ed1f19/style.json?key=${apiKey}`;
+    const mapApiKey = "jB11OR9dfQrR5Kz4It89";
+    const locApiKey =
+      "BbfASGePwdDWBONIYVMcfRvgCVxWyuILDv9Vnekp08qxhJ82ztYe2jb4S244YSu3";
+
+    const mapStyleLight = `https://api.maptiler.com/maps/d822cf9a-e7bd-46ec-ab0a-75dc9bf16d32/style.json?key=${mapApiKey}`;
+    const mapStyleDark = `https://api.maptiler.com/maps/ed916e60-ca24-40fe-9984-6b1fa0ed1f19/style.json?key=${mapApiKey}`;
 
     let dark = false;
     let time = new Date();
@@ -53,7 +56,7 @@ export default {
       pitch: this.pitch,
     });
 
-    if (true) {
+    if (dark) {
       // $('body').toggleClass('dark')
       const body = document.querySelector("body");
       body.classList.add("dark");
@@ -63,16 +66,14 @@ export default {
     this.map.addControl(new mgl.NavigationControl());
 
     this.map.on("load", () => {
-      const locPromise = fetch(
-        "http://ip-api.com/json/?city,regionName,country_name,lat,lon"
-      )
+      const locPromise = fetch("https://ipapi.co/json/")
         .then((response) => response.json())
         // .then(data => { ip_lookup = data })
         .then((data) => {
           if (data.city) {
             this.loc = data.city;
-          } else if (data.regionName) {
-            this.loc = data.regionName;
+          } else if (data.region) {
+            this.loc = data.region;
           } else {
             if (data.country_code == "US") {
               this.loc = "somewhere in the " + data.country;
@@ -82,7 +83,7 @@ export default {
           }
 
           this.map.jumpTo({
-            center: [data.lon, data.lat],
+            center: [data.longitude, data.latitude],
           });
         });
     });
