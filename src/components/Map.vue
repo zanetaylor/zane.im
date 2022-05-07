@@ -2,87 +2,94 @@
   <div id="map" ref="map"></div>
   <div class="overlay"></div>
   <div class="greet" :class="{ active: loc }">
-    <p class="greeting">It looks like you're visiting from <span class="loc">{{ loc }}</span>.</p>
+    <p class="greeting">
+      It looks like you're visiting from <span class="loc">{{ loc }}</span
+      >.
+    </p>
     <p class="greeting"><span class="hi">How's the weather?</span></p>
-</div>
+  </div>
 </template>
 
 <script>
-
-import * as mbgl from 'mapbox-gl'
+// import * as mgl from 'mapbox-gl'
+import * as mgl from "maplibre-gl";
 
 export default {
-
   data() {
     return {
-      accessToken: 'pk.eyJ1Ijoiem90dGVyZGFzIiwiYSI6ImNrNzd2ZTZ6cTAyMTAzbG51eG41dDV5c2QifQ.Gt6NSuWV9kymSGDvs4VlMQ',
-      mapStyle: 'mapbox://styles/zotterdas/ckbv7kvf6172m1ivo731ifecs',
+      // accessToken: 'pk.eyJ1Ijoiem90dGVyZGFzIiwiYSI6ImNrNzd2ZTZ6cTAyMTAzbG51eG41dDV5c2QifQ.Gt6NSuWV9kymSGDvs4VlMQ',
+      // mapStyle: 'mapbox://styles/zotterdas/ckbv7kvf6172m1ivo731ifecs',
+      // apiKey: "jB11OR9dfQrR5Kz4It89",
+      // mapStyle: `https://api.maptiler.com/maps/streets/style.json?key=${this.apiKey}`,
       latitude: 35.4832668,
       longitude: 12.9491635,
       zoom: 15.5,
       pitch: 65,
-      loc: '',
-      mapLoaded: false
-    }
+      loc: "",
+      mapLoaded: false,
+    };
   },
   created() {
     this.map = null;
   },
   mounted() {
-    let dark = false
-    let time = new Date()
+    const apiKey = "jB11OR9dfQrR5Kz4It89";
+    const mapStyleLight = `https://api.maptiler.com/maps/d822cf9a-e7bd-46ec-ab0a-75dc9bf16d32/style.json?key=${apiKey}`;
+    const mapStyleDark = `https://api.maptiler.com/maps/ed916e60-ca24-40fe-9984-6b1fa0ed1f19/style.json?key=${apiKey}`;
 
-    if(time.getHours() > 17 || time.getHours() < 6) {
-      dark = true
+    let dark = false;
+    let time = new Date();
+
+    if (time.getHours() > 17 || time.getHours() < 6) {
+      dark = true;
     }
 
-    this.map = new mbgl.Map({
-      accessToken: this.accessToken,
+    this.map = new mgl.Map({
+      // accessToken: this.accessToken,
       container: this.$refs.map,
-      style: this.mapStyle,
+      style: mapStyleLight,
       center: [this.longitude, this.latitude],
       zoom: this.zoom,
       pitch: this.pitch,
-    })
+    });
 
-    if(dark) {
+    if (true) {
       // $('body').toggleClass('dark')
-      const body = document.querySelector('body')
-      body.classList.add('dark')
-      this.map.setStyle('mapbox://styles/zotterdas/ckbxvs6p12h081inbbgko2edn')
+      const body = document.querySelector("body");
+      body.classList.add("dark");
+      this.map.setStyle(mapStyleDark);
     }
 
-    this.map.addControl(new mbgl.NavigationControl())
+    this.map.addControl(new mgl.NavigationControl());
 
-    this.map.on('load', ()=> {
-
-      const locPromise = fetch('https://freegeoip.app/json/')
-        .then(response => response.json())
+    this.map.on("load", () => {
+      const locPromise = fetch(
+        "http://ip-api.com/json/?city,regionName,country_name,lat,lon"
+      )
+        .then((response) => response.json())
         // .then(data => { ip_lookup = data })
-        .then(data => {
-
-          if(data.city) {
-            this.loc = data.city
-          } else if(data.region_name) {
-            this.loc = data.region_name
+        .then((data) => {
+          if (data.city) {
+            this.loc = data.city;
+          } else if (data.regionName) {
+            this.loc = data.regionName;
           } else {
-            if(data.country_code == 'US') {
-              this.loc = 'somewhere in the ' + data.country_code
+            if (data.country_code == "US") {
+              this.loc = "somewhere in the " + data.country;
             } else {
-              this.loc = 'somewhere in ' + data.country_name
+              this.loc = "somewhere in " + data.country;
             }
           }
 
           this.map.jumpTo({
-            center: [data.longitude, data.latitude],
-          })
+            center: [data.lon, data.lat],
+          });
+        });
+    });
 
-        })
-    })
-
-    this.map.once('moveend', ()=> {
-      this.rotateCamera(0)
-    })
+    this.map.once("moveend", () => {
+      this.rotateCamera(0);
+    });
   },
   methods: {
     rotateCamera(timestamp) {
@@ -91,15 +98,12 @@ export default {
       this.map.rotateTo((timestamp / 500) % 360, { duration: 0 });
       // Request the next frame of the animation.
       window.requestAnimationFrame(this.rotateCamera);
-    }
-  }
-  
-}
-
+    },
+  },
+};
 </script>
 
 <style lang="scss">
-
 #map {
   position: absolute;
   width: 100vw;
@@ -116,15 +120,23 @@ export default {
   width: 100%;
   height: 100%;
   // background: #efefef;
-  background: rgb(239,239,239);
-  background: linear-gradient(180deg, rgba(239,239,239,0.4) 0%, rgba(255,255,255,1) 90%);
+  background: rgb(239, 239, 239);
+  background: linear-gradient(
+    180deg,
+    rgba(239, 239, 239, 0.4) 0%,
+    rgba(255, 255, 255, 1) 90%
+  );
 }
 
 body.dark {
   .overlay {
     // background: #111;
-    background: rgb(17,17,17);
-    background: linear-gradient(180deg, rgba(17,17,17,0.3) 0%, rgba(17,17,17,1) 90%); 
+    background: rgb(17, 17, 17);
+    background: linear-gradient(
+      180deg,
+      rgba(17, 17, 17, 0.3) 0%,
+      rgba(17, 17, 17, 1) 90%
+    );
   }
   .greet {
     color: #eee;
@@ -133,15 +145,15 @@ body.dark {
 
 .greet {
   position: fixed;
-  top: .75rem;
-  right: .75rem;
+  top: 0.75rem;
+  right: 0.75rem;
   color: #222;
   max-width: 420px;
   opacity: 0;
-  transition: all .3s;
+  transition: all 0.3s;
 
   &.active {
-    opacity: .75;
+    opacity: 0.75;
   }
 }
 .greeting {
@@ -153,9 +165,8 @@ body.dark {
 
   .loc {
     font-weight: 500;
-    background: #7C4EFF;
+    background: #7c4eff;
     color: #eee;
   }
-} 
-
+}
 </style>
