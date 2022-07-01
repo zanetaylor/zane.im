@@ -117,16 +117,16 @@ export default {
 }
 
 .overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  // background: #efefef;
+  @apply absolute w-full h-full;
+
   background: rgb(239, 239, 239);
   background: linear-gradient(
     180deg,
     rgba(239, 239, 239, 0.4) 0%,
     rgba(255, 255, 255, 1) 90%
   );
+  backdrop-filter: blur(5px);
+  mask: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.2) 50%, black 80%);
 }
 
 body.dark {
