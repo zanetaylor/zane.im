@@ -126,7 +126,7 @@ export default {
     rgba(255, 255, 255, 1) 90%
   );
   backdrop-filter: blur(5px);
-  mask: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.2) 50%, black 80%);
+  mask: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.15) 50%, black 80%);
 }
 
 body.dark {
