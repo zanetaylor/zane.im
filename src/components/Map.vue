@@ -96,7 +96,7 @@ export default {
     rotateCamera(timestamp) {
       // clamp the rotation between 0 -360 degrees
       // Divide timestamp by 100 to slow rotation to ~10 degrees / sec
-      this.map.rotateTo((timestamp / 500) % 360, { duration: 0 });
+      this.map.rotateTo((timestamp / 600) % 360, { duration: 0 });
       // Request the next frame of the animation.
       window.requestAnimationFrame(this.rotateCamera);
     },
@@ -106,9 +106,7 @@ export default {
 
 <style lang="scss">
 #map {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
+  @apply absolute w-full h-screen;
   /* opacity: .9; */
 }
 
@@ -117,7 +115,7 @@ export default {
 }
 
 .overlay {
-  @apply absolute w-full h-full;
+  @apply absolute w-full h-screen;
 
   background: rgb(239, 239, 239);
   background: linear-gradient(
@@ -125,8 +123,6 @@ export default {
     rgba(239, 239, 239, 0.4) 0%,
     rgba(255, 255, 255, 1) 90%
   );
-  backdrop-filter: blur(5px);
-  mask: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.15) 50%, black 80%);
 }
 
 body.dark {
@@ -145,7 +141,7 @@ body.dark {
 }
 
 .greet {
-  position: fixed;
+  position: absolute;
   top: 0.75rem;
   right: 0.75rem;
   color: #222;
@@ -158,15 +154,15 @@ body.dark {
   }
 }
 .greeting {
-  float: right;
-  margin: 0;
-  // padding: .2rem .5rem;
-  font-size: 0.75rem;
-  text-align: right;
+  @apply float-right m-0 text-sm text-right;
 
   .loc {
+    position: relative;
+    top: -1px;
+    left: -2px;
+    padding: 2px 4px;
     font-weight: 500;
-    background: #7c4eff;
+    background: -webkit-linear-gradient(45deg, #7C4EFF, #A21CAF);
     color: #eee;
   }
 }
