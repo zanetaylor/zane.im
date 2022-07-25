@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: zanetaylor/zane.im
-  branch: astro-vue
+  branch: master
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
