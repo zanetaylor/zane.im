@@ -45,13 +45,17 @@ body {
       opacity: 0;
       transform: translateY(90%) rotateX(25deg);
   }
+  70% {
+    opacity: 0;
+    transform: translateY(90%) rotateX(25deg);
+  }
   100% {
       opacity: .9;
       transform: translateY(0) rotateX(0);
   }
 }
 .content {
-  animation: .5s cubic-bezier(0.83, 0, 0.17, 1) 1s 1 welcome;
+  animation: 2.25s cubic-bezier(0.83, 0, 0.17, 1) 0s 1 forwards welcome;
 }
 h1 {
   @apply font-display leading-snug lg:leading-normal font-bold text-4xl lg:text-6xl mb-8 lg:mb-12;
