@@ -1,8 +1,8 @@
 ---
-layout: $/layouts/BlogPost.astro
+# layout: $/layouts/BlogPost.astro
 title: Big Lava
 description: Camping in Indian Heaven
-date: 2022-07-25T13:54:36.203Z
+publishDate: 2022-07-25T13:54:36.203Z
 ---
 ![](/images/uploads/p7230039.jpg)
 
