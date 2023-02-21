@@ -10,11 +10,10 @@ const { post } = Astro.props;
 
 <article class="post-preview">
 	<header>
-		<p class="publish-date">{post.data.publishDate}</p>
-		<a href={`/blog/${post.slug}`}><h1 class="title">{post.data.title}</h1></a>
+		<h1 class="title font-display font-bold text-5xl leading-tight"><a href={`/blog/${post.slug}`}>{post.data.title}</a></h1>
 	</header>
-	<p>{post.data.description}</p>
-	<a href={`/blog/${post.slug}`}>Read more</a>
+	<p class="font-sans text-xl">{post.data.description}</p>
+	<!-- <a href={`/blog/${post.slug}`}>Read more</a> -->
 </article>
 
 <style>
@@ -29,12 +28,20 @@ const { post } = Astro.props;
 	}
 
 	header {
-		align-items: flex-start;
+		/* align-items: flex-start;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		padding-bottom: 2rem;
-		text-align: left;
+		text-align: left; */
+		margin: 0 0 1rem 0;
+	}
+
+	a {
+		color: #7C4EFF;
+		background: -webkit-linear-gradient(45deg, #7C4EFF, #A21CAF);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 
 	.title,
@@ -43,15 +50,7 @@ const { post } = Astro.props;
 		margin: 0;
 	}
 
-	.publish-date,
-	.author {
-		font-size: 1.25rem;
-		color: var(--theme-text-lighter);
-	}
-
 	.title {
-		font-size: 2.25rem;
-		font-weight: 700;
-		color: var(--theme-text);
+		
 	}
 </style>

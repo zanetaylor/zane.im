@@ -1,13 +1,13 @@
 ---
-import HomePageLayout from '$/layouts/Home.astro'
+import MainLayout from '$/layouts/Main.astro'
 import Map from '$/components/Map.svelte'
 ---
 
-<HomePageLayout>
+<MainLayout>
   <Map client:load />
   <div class="view">
     <div class="wrap">
-      <div class="content">
+      <div class="content font-serif">
         <h1><a class="h-card" href="https://zane.im"><span class="p-name">Zane Taylor</span></a> is a creative web engineer.</h1>
         <p>He lives in Oregon, building stuff with code, data, maps, and open source. He's usually drinking coffee, riding a bike, hitting the trail, or petting a cat.</p>
         <h2>Need more?</h2>
@@ -22,7 +22,7 @@ import Map from '$/components/Map.svelte'
       </div>
     </div>
   </div>
-</HomePageLayout>
+</MainLayout>
 
 <style lang="scss">
 html, body {
@@ -60,7 +60,7 @@ body {
   animation: 2.25s cubic-bezier(0.83, 0, 0.17, 1) 0s 1 forwards welcome;
 }
 h1 {
-  @apply font-display leading-snug lg:leading-normal font-bold text-4xl lg:text-6xl mb-8 lg:mb-12;
+  @apply font-display leading-snug font-bold text-4xl lg:text-6xl mb-8 lg:mb-12;
 
   span {
     color: #7C4EFF;

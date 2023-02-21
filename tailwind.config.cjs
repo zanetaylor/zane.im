@@ -30,9 +30,10 @@ module.exports = {
             primarySecondaryDark: colors.violet[600],
         },
 		fontFamily: {
-			sans: ['Fira Mono', ...fontFamily.sans],
+			sans: ['Atkinson Hyperlegible', ...fontFamily.sans],
+            serif: ['Fira Mono', ...fontFamily.serif],
             mono: ['Fira Mono', ...fontFamily.mono],
-            display: ['Work Sans', ...fontFamily.sans]
+            display: ['Atkinson Hyperlegible', ...fontFamily.sans]
 		},
 		extend: {
             typography: (theme) => ({

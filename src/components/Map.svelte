@@ -90,7 +90,7 @@
 
 <div id="map" ref="map"></div>
 <div class="overlay"></div>
-<div class="greet" class:active={loc}>
+<div class="greet font-serif" class:active={loc}>
   <p class="greeting">
     It looks like you're visiting from <span class="loc">{ loc }</span
     >.
