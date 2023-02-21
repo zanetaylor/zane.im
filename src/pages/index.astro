@@ -11,7 +11,7 @@ import Map from '$/components/Map.svelte'
         <h1><a class="h-card" href="https://zane.im"><span class="p-name">Zane Taylor</span></a> is a creative web engineer.</h1>
         <p>He lives in Oregon, building stuff with code, data, maps, and open source. He's usually drinking coffee, riding a bike, hitting the trail, or petting a cat.</p>
         <h2>Need more?</h2>
-        <p>Go ahead and <a target="_blank" href="mailto:hey@zanetaylor.me">say hello</a>, <a target="_blank" href="https://calendly.com/zanetaylor">schedule a chat</a>, or <a target="_blank" href="https://keybase.io/encrypt#zanetaylor">send him a secret message</a>.</p>
+        <p class="text-2xl">Go ahead and <a target="_blank" href="mailto:hey@zanetaylor.me">say hello</a>, <a target="_blank" href="https://calendly.com/zanetaylor">schedule a chat</a>, or <a target="_blank" href="https://keybase.io/encrypt#zanetaylor">send him a secret message</a>.</p>
 
         <h3>See also</h3>
         <ul class="text-lg">
@@ -31,7 +31,7 @@ html, body {
 body {
   @apply font-sans bg-white;
 
-  color: #333;
+  color: #111;
   overflow: overlay;
   scrollbar-gutter: stable;
 }
@@ -70,13 +70,13 @@ h1 {
   }
 }
 h2 {
-  @apply inline-block text-2xl lg:text-3xl font-bold;
+  @apply inline-block font-sans text-2xl lg:text-4xl font-bold;
 
   background: -webkit-linear-gradient(45deg, #7C4EFF, #A21CAF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-h3 { @apply text-xl lg:text-2xl; }
+h3 { @apply text-xl lg:text-2xl font-bold; }
 h2, h3 { @apply mb-1.5 }
 p { @apply text-lg lg:text-3xl leading-normal lg:leading-normal mb-12 max-w-6xl; }
 p, li {
@@ -84,7 +84,7 @@ p, li {
     @apply relative no-underline transition-all duration-300;
     color: #242424;
     background-size: 100% 300%;
-    background-image: linear-gradient(transparent 28px, #7C4EFF 0);
+    background-image: linear-gradient(transparent 24px, #7C4EFF 0);
     text-shadow: none;
   }
 }
