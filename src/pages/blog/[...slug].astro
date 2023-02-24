@@ -17,20 +17,23 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 <MainLayout frontmatter={entry.data}>
-  <div class="m-auto max-w-3xl">
+  <div class="m-auto max-w-5xl">
+
     <BlogHeader />
-    <article class="content">
+
+    <article class="content max-w-3xl">
       <!-- <div> -->
-        <header>
+        <header class="my-10 lg:my-12">
           <!-- {heroImage && <img width="720" height="420" class="hero-image" loading="lazy" src={heroImage} alt={alt} />} -->
           <!-- <p class="publish-date">{publishDate}</p> -->
           <h1 class="title">{entry.data.title}</h1>
         </header>
-        <main class="prose-xl">
+        <main class="prose-xl text-zinc-800 dark:text-zinc-400">
           <Content />
         </main>
       <!-- </div> -->
     </article>
+
   </div>
 </MainLayout>
 
@@ -52,43 +55,8 @@ const { Content } = await entry.render();
 		}
 	}
 
-	.content {
-		margin-bottom: 8rem;
-	}
-
-	.content :global(main > * + *) {
-		margin-top: 1rem;
-	}
-
-	.content :global(h2) {
-		margin-top: 4rem;
-	}
-
-	header {
-		/* display: flex;
-		flex-direction: column;
-		text-align: center;
-		align-items: center;
-		justify-content: center;
-
-		padding-bottom: 2rem;
-		margin-bottom: 2rem;
-		border-bottom: 4px solid var(--theme-divider); */
-	}
-
-	.title,
-	.author,
-	.publish-date {
-		margin: 0;
-	}
-
-	.publish-date,
-	.author {
-		color: var(--theme-text-lighter);
-	}
-
 	.title {
-		@apply font-display leading-snug font-bold text-4xl lg:text-6xl mb-8 lg:mb-12;
+		@apply font-display leading-snug font-bold text-4xl lg:text-6xl;
 
 		/* color: #7C4EFF;
 		background: -webkit-linear-gradient(45deg, #7C4EFF, #A21CAF);

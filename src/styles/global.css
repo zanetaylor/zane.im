@@ -1,0 +1,38 @@
+.overlay {
+  @apply absolute inset-0 w-full h-screen;
+
+  background: rgb(239, 239, 239);
+  background: linear-gradient(
+    180deg,
+    rgba(239, 239, 239, 0.4) 0%,
+    rgba(255, 255, 255, 1) 90%
+  );
+}
+
+html.dark .overlay {
+  background: rgb(17, 17, 17);
+  background: linear-gradient(
+    to bottom,
+    hsla(0, 0%, 13%, 0) 0%,
+    hsla(0, 0%, 13%, 0.013) 8.1%,
+    hsla(0, 0%, 13%, 0.049) 15.5%,
+    hsla(0, 0%, 13%, 0.104) 22.5%,
+    hsla(0, 0%, 13%, 0.175) 29%,
+    hsla(0, 0%, 13%, 0.259) 35.3%,
+    hsla(0, 0%, 13%, 0.352) 41.2%,
+    hsla(0, 0%, 13%, 0.45) 47.1%,
+    hsla(0, 0%, 13%, 0.55) 52.9%,
+    hsla(0, 0%, 13%, 0.648) 58.8%,
+    hsla(0, 0%, 13%, 0.741) 64.7%,
+    hsla(0, 0%, 13%, 0.825) 71%,
+    hsla(0, 0%, 13%, 0.896) 77.5%,
+    hsla(0, 0%, 13%, 0.951) 84.5%,
+    hsla(0, 0%, 13%, 0.987) 91.9%,
+    hsl(0, 0%, 13%) 100%
+  );
+}
+
+
+html.dark .greet {
+  color: #eee !important;
+}

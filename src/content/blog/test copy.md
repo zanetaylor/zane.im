@@ -1,5 +1,4 @@
 ---
-# layout: $/layouts/BlogPost.astro
 title: Here's a long title for testing the theme and so on
 description: Nulla non rhoncus magna. Nam id urna nisl. Suspendisse malesuada, urna nec aliquet luctus, nisi arcu cursus urna, eu dignissim turpis libero et ipsum.
 publishDate: 2022-04-12T04:23:48.329Z

@@ -88,7 +88,7 @@
   }
 </script>
 
-<div id="map" ref="map"></div>
+<div id="map"></div>
 <div class="overlay"></div>
 <div class="greet font-serif" class:active={loc}>
   <p class="greeting">
@@ -98,7 +98,7 @@
   <p class="greeting"><span class="hi">How's the weather?</span></p>
 </div>
 
-<style lang="scss">
+<style>
   #map {
     @apply absolute w-full h-screen;
     /* opacity: .9; */
@@ -116,22 +116,23 @@
     max-width: 420px;
     opacity: 0;
     transition: all 0.3s;
-  
-    &.active {
-      opacity: 0.75;
-    }
   }
+
+  .greet.active {
+    opacity: 0.75;
+  }
+
   .greeting {
     @apply float-right m-0 text-sm text-right;
-  
-    .loc {
-      position: relative;
-      top: -1px;
-      left: -2px;
-      padding: 2px 4px;
-      font-weight: 500;
-      background: -webkit-linear-gradient(45deg, #7C4EFF, #A21CAF);
-      color: #eee;
-    }
+  }
+
+  .loc {
+    position: relative;
+    top: -1px;
+    left: -2px;
+    padding: 2px 4px;
+    font-weight: 500;
+    background: -webkit-linear-gradient(45deg, #7C4EFF, #A21CAF);
+    color: #eee;
   }
 </style>  

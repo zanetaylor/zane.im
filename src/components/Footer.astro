@@ -1,14 +1,10 @@
 ---
 import NetlifyIdentity from './NetlifyIdentity.svelte'
 ---
-<footer class="footer">
-    <nav class="nav">
-        <div>&copy; 20XX</div>
-        <NetlifyIdentity client:load/>
-    </nav>
+<footer class="footer px-8 py-10 text-sm text-zinc-700">
+    <!-- <nav class="nav"> -->
+    <div class="m-auto max-w-5xl">&copy;</div>
+    <!-- </nav> -->
 </footer>
-<style>
-    .footer {
-        @apply py-6 border-t
-    }
-</style>
+
+<NetlifyIdentity client:load/>
