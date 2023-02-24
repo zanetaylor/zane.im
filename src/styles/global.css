@@ -1,5 +1,5 @@
 .overlay {
-  @apply absolute inset-0 w-full h-screen;
+  @apply fixed inset-0 w-full h-screen;
 
   background: rgb(239, 239, 239);
   background: linear-gradient(

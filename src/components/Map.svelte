@@ -89,7 +89,9 @@
 </script>
 
 <div id="map"></div>
+
 <div class="overlay"></div>
+
 <div class="greet font-serif" class:active={loc}>
   <p class="greeting">
     It looks like you're visiting from <span class="loc">{ loc }</span
@@ -100,10 +102,10 @@
 
 <style>
   #map {
-    @apply absolute w-full h-screen;
-    /* opacity: .9; */
+    position: fixed;
+    width: 100%;
+    height: 100vh;
   }
-  
   .mapboxgl-control-container {
     display: none !important;
   }

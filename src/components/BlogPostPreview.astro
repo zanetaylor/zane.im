@@ -9,11 +9,11 @@ const { post } = Astro.props;
 ---
 
 <article class="post-preview">
-	<a href={`/blog/${post.slug}`} class="block px-8 transition duration-300 hover:bg-black">
+	<a href={`/blog/${post.slug}`} class="block -mx-8 px-8 transition duration-300 hover:bg-zinc-100 dark:hover:bg-black">
 		<div class="m-auto max-w-5xl py-12">
 			<div class="max-w-3xl">
 				<header>
-					<h1 class="title font-display font-bold text-5xl leading-tight mb-3">{post.data.title}</h1>
+					<h1 class="title font-display font-bold text-4xl lg:text-5xl leading-tight mb-3">{post.data.title}</h1>
 				</header>
 				<p class="font-sans text-xl">{post.data.description}</p>
 				<!-- <a href={`/blog/${post.slug}`}>Read more</a> -->
