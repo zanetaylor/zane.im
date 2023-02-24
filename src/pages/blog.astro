@@ -23,11 +23,11 @@ const allBlogPosts = await getCollection('blog');
 
 <MainLayout>
 
-	<div class="m-auto max-w-3xl">
+	<div class="dark:text-slate-50">
 		<BlogHeader />
 		<div class="wrapper">
 			<main class="content">
-				<section class="intro">
+				<section class="intro	m-auto max-w-5xl">
 					<h1>{title}</h1>
 					<!-- <p>{description}</p> -->
 				</section>
@@ -42,7 +42,7 @@ const allBlogPosts = await getCollection('blog');
 
 <style>
 h1 {
-	@apply font-display leading-snug lg:leading-normal font-bold text-4xl lg:text-6xl mb-8 lg:mb-12;
+	@apply font-display leading-snug lg:leading-normal font-bold text-4xl lg:text-7xl my-4 lg:my-8;
 
 	/* color: #7C4EFF;
 	background: -webkit-linear-gradient(45deg, #7C4EFF, #A21CAF);

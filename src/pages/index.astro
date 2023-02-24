@@ -1,6 +1,8 @@
 ---
 import MainLayout from '$/layouts/Main.astro'
 import Map from '$/components/Map.svelte'
+
+import '../styles/map.css'
 ---
 
 <MainLayout>
@@ -11,13 +13,13 @@ import Map from '$/components/Map.svelte'
         <h1><a class="h-card" href="https://zane.im"><span class="p-name">Zane Taylor</span></a> is a creative web engineer.</h1>
         <p>He lives in Oregon, building stuff with code, data, maps, and open source. He's usually drinking coffee, riding a bike, hitting the trail, or petting a cat.</p>
         <h2>Need more?</h2>
-        <p class="text-2xl">Go ahead and <a target="_blank" href="mailto:hey@zanetaylor.me">say hello</a>, <a target="_blank" href="https://calendly.com/zanetaylor">schedule a chat</a>, or <a target="_blank" href="https://keybase.io/encrypt#zanetaylor">send him a secret message</a>.</p>
+        <p class="text-2xl">Go ahead and <a class="dark:text-neutral-200" target="_blank" href="mailto:hey@zanetaylor.me">say hello</a>, <a class="dark:text-neutral-200" target="_blank" href="https://calendly.com/zanetaylor">schedule a chat</a>, or <a class="dark:text-neutral-200" target="_blank" href="https://keybase.io/encrypt#zanetaylor">send him a secret message</a>.</p>
 
         <h3>See also</h3>
         <ul class="text-lg">
-          <li><a href="/resume">Resume &rarr;</a> (<a href="/resume.pdf">PDF</a>)</li>
-          <li><a href="https://www.linkedin.com/in/iamzanetaylor" rel="me">LinkedIn &rarr;</a></li>
-          <li><a href="https://github.com/zanetaylor" rel="me">Github &rarr;</a></li>
+          <li><a class="dark:text-neutral-200" href="/resume">Resume &rarr;</a> (<a class="dark:text-neutral-200" href="/resume.pdf">PDF</a>)</li>
+          <li><a class="dark:text-neutral-200" href="https://www.linkedin.com/in/iamzanetaylor" rel="me">LinkedIn &rarr;</a></li>
+          <li><a class="dark:text-neutral-200" href="https://github.com/zanetaylor" rel="me">Github &rarr;</a></li>
         </ul>
       </div>
     </div>
@@ -102,17 +104,6 @@ ul {
 
     a {
       background-image: linear-gradient(transparent 19px, #7C4EFF 0);
-    }
-  }
-}
-
-body.dark {
-  color: #eee;
-  background: #111;
-
-  p, li {
-    a {
-      color: #eee;
     }
   }
 }

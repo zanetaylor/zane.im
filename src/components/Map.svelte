@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
 
   import * as mgl from 'maplibre-gl'
-  import 'maplibre-gl/dist/maplibre-gl.css';
+  import 'maplibre-gl/dist/maplibre-gl.css'
 
   let loc = false
   let map
@@ -22,11 +22,11 @@
     const mapStyleLight = `https://api.maptiler.com/maps/d822cf9a-e7bd-46ec-ab0a-75dc9bf16d32/style.json?key=${mapApiKey}`;
     const mapStyleDark = `https://api.maptiler.com/maps/ed916e60-ca24-40fe-9984-6b1fa0ed1f19/style.json?key=${mapApiKey}`;
 
-    let dark = false
-    let time = new Date()
+    let time = new Date();
 
     if (time.getHours() > 17 || time.getHours() < 6) {
-      dark = true;
+      // dark = true;
+      theme == 'dark'
     }
 
     map = new mgl.Map({
@@ -39,10 +39,10 @@
       attributionControl: false
     });
 
-    if (dark) {
+    if (localStorage.theme == 'dark') {
       // $('body').toggleClass('dark')
-      const body = document.querySelector("body");
-      body.classList.add("dark");
+      // const body = document.querySelector("body");
+      // body.classList.add("dark");
       map.setStyle(mapStyleDark);
     }
 
@@ -106,32 +106,6 @@
   
   .mapboxgl-control-container {
     display: none !important;
-  }
-  
-  .overlay {
-    @apply absolute w-full h-screen;
-  
-    background: rgb(239, 239, 239);
-    background: linear-gradient(
-      180deg,
-      rgba(239, 239, 239, 0.4) 0%,
-      rgba(255, 255, 255, 1) 90%
-    );
-  }
-  
-  body.dark {
-    .overlay {
-      // background: #111;
-      background: rgb(17, 17, 17);
-      background: linear-gradient(
-        180deg,
-        rgba(17, 17, 17, 0.3) 0%,
-        rgba(17, 17, 17, 1) 90%
-      );
-    }
-    .greet {
-      color: #eee;
-    }
   }
   
   .greet {

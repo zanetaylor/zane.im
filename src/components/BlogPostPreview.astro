@@ -9,11 +9,17 @@ const { post } = Astro.props;
 ---
 
 <article class="post-preview">
-	<header>
-		<h1 class="title font-display font-bold text-5xl leading-tight"><a href={`/blog/${post.slug}`}>{post.data.title}</a></h1>
-	</header>
-	<p class="font-sans text-xl">{post.data.description}</p>
-	<!-- <a href={`/blog/${post.slug}`}>Read more</a> -->
+	<a href={`/blog/${post.slug}`} class="block px-8 transition duration-200 hover:bg-black">
+		<div class="m-auto max-w-5xl py-12">
+			<div class="max-w-3xl">
+				<header>
+					<h1 class="title font-display font-bold text-5xl leading-tight mb-3">{post.data.title}</h1>
+				</header>
+				<p class="font-sans text-xl">{post.data.description}</p>
+				<!-- <a href={`/blog/${post.slug}`}>Read more</a> -->
+			</div>
+		</div>
+	</a>
 </article>
 
 <style>
@@ -21,36 +27,14 @@ const { post } = Astro.props;
 		margin-top: 1rem;
 	}
 
-	.post-preview {
-		padding-bottom: 2rem;
-		margin-bottom: 2rem;
-		border-bottom: 4px solid var(--theme-divider);
+	a:hover {
+		background-image: url(/assets/nnnoise.svg);
 	}
 
-	header {
-		/* align-items: flex-start;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding-bottom: 2rem;
-		text-align: left; */
-		margin: 0 0 1rem 0;
-	}
-
-	a {
+	h1 {
 		color: #7C4EFF;
 		background: -webkit-linear-gradient(45deg, #7C4EFF, #A21CAF);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-	}
-
-	.title,
-	.author,
-	.publish-date {
-		margin: 0;
-	}
-
-	.title {
-		
 	}
 </style>
