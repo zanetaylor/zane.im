@@ -1,8 +1,10 @@
 ---
 draft: true
 publishDate: 2022-04-12T04:23:48.329Z
-title: So I rebuilt my site with Astro
+title: So I rebuilt with Astro
 description: Yet Another Astro Love Letter
+tags:
+  - dev
 ---
 That's right, another ode to the hot new SSG on the block. I just couldn't help myself.
 
