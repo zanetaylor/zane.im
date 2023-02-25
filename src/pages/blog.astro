@@ -1,19 +1,19 @@
 ---
 // Component Imports
-import MainLayout from '$/layouts/Main.astro';
-// import BaseHead from '$/components/BaseHead.astro';
-import BlogHeader from '$/components/BlogHeader.astro';
-import BlogPostPreview from '$/components/BlogPostPreview.astro';
+import MainLayout from '$/layouts/Main.astro'
 
-import { getCollection } from 'astro:content';
+import BlogHeader from '$/components/BlogHeader.astro'
+import BlogPostPreview from '$/components/BlogPostPreview.astro'
 
-let title = 'Blog';
-let description = 'Let me just say.';
-let permalink = 'https://zane.im/blog/';
+import { getCollection } from 'astro:content'
 
-const allBlogPosts = await getCollection('blog', ({ data }) => {
+let title = 'Blog'
+let description = 'Let me just say.'
+let permalink = 'https://zane.im/blog/'
+
+const posts = await getCollection('blog', ({ data }) => {
 	return data.draft !== true;
-});
+})
 
 ---
 
@@ -31,7 +31,7 @@ const allBlogPosts = await getCollection('blog', ({ data }) => {
 				<!-- <p>{description}</p> -->
 			</section>
 			<section aria-label="Blog post list">
-				{allBlogPosts.map((p) => <BlogPostPreview post={p} />)}
+				{posts.map((p) => <BlogPostPreview post={p} />)}
 			</section>
 		</main>
 		

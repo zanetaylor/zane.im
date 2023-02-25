@@ -15,6 +15,7 @@ const __dirname = dirname(__filename);
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://zane.im',
   vite: {
     resolve: {
       alias: {
