@@ -2,8 +2,8 @@
 draft: true
 publishDate: 2022-04-12T04:23:48.329Z
 title: So I rebuilt with Astro 🎉
-description: That's right, another ode to the hot new static site generator on
-  the block. I'll try to keep this short.
+description: That's right, another ode to the hot new(ish) static site generator
+  on the block. I'll try to keep this short.
 tags:
   - dev
   - ssg
