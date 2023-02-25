@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Big Lava
 description: Camping in Indian Heaven
 publishDate: 2022-07-25T13:54:36.203Z
