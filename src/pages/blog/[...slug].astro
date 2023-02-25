@@ -8,15 +8,17 @@ import BlogHeader from '$/components/BlogHeader.astro'
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
-  return blogEntries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
+  return blogEntries.map(post => ({
+    params: { slug: post.slug }, props: { post },
   }));
 }
 
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+import '$/styles/blog.css'
 ---
-<MainLayout frontmatter={entry.data}>
+<MainLayout frontmatter={post.data}>
 
 		<div class="px-8">
 
@@ -25,8 +27,9 @@ const { Content } = await entry.render();
 			<div class="m-auto max-w-5xl">
 				<article class="content max-w-3xl">
 					<!-- <div> -->
-						<header class="my-10 lg:my-12">
-							<h1 class="title text-zinc-800 dark:text-zinc-100">{entry.data.title}</h1>
+						<header class="mt-10 mb-12 lg:mt-12 lg:mb-14">
+							<h1 class="mb-6 font-display leading-snug font-bold text-4xl lg:text-6xl text-zinc-800 dark:text-zinc-100">{post.data.title}</h1>
+							<p class="text-2xl text-zinc-800 dark:text-zinc-100">{post.data.description}</p>
 						</header>
 						<main class="prose-lg lg:prose-xl text-zinc-700 dark:text-zinc-400 prose-headings:font-bold prose-headings:dark:text-zinc-100">
 							<Content />
@@ -38,14 +41,3 @@ const { Content } = await entry.render();
 		</div>
 
 </MainLayout>
-
-<style>
-	.title {
-		@apply font-display leading-snug font-bold text-4xl lg:text-6xl;
-
-		/* color: #7C4EFF;
-		background: -webkit-linear-gradient(45deg, #7C4EFF, #A21CAF);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent; */
-	}
-</style>
