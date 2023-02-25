@@ -2,8 +2,8 @@
 draft: true
 publishDate: 2022-04-12T04:23:48.329Z
 title: So I rebuilt with Astro
-description: That's right, another ode to the hot new SSG on the block. I just
-  couldn't help myself.
+description: That's right, another ode to the hot new(ish) SSG on the block. I
+  just couldn't help myself.
 tags:
   - dev
   - ssg
