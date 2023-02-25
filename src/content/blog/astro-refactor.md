@@ -4,7 +4,7 @@ publishDate: 2022-04-12T04:23:48.329Z
 title: So I rebuilt my site with Astro
 description: Yet Another Astro Love Letter
 ---
-That's right, another ode to the hot new SSG on the block.
+That's right, another ode to the hot new SSG on the block. I just couldn't help myself.
 
 ## Any excuse to rebuild
 
