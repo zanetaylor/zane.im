@@ -9,8 +9,6 @@ tags:
   - ssg
   - astro
 ---
-That's right, another ode to the hot new static site generator on the block. I'll try to keep this short.
-
 ## Any excuse to refactor
 
 The truth is, I love using my own site as a place to play around with new frontend tools and techniques. It's a great way for me to learn and break things in a low stakes way without having to go through the trouble of setting up a new project or diving into a refactor of something more complex. After spending some time with [Astro](https://astro.build) v1.x, I realized I'd finally found a static site generator I really vibed with. With the recent release of v2.0, I decided it was time to go all in.
