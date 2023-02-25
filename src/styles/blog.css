@@ -1,5 +1,5 @@
 .content a {
-	@apply relative text-zinc-100 font-bold;
+	@apply relative text-zinc-900 dark:text-zinc-100 font-bold;
 }
 
 .content a::before {
