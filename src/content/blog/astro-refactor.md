@@ -11,7 +11,7 @@ tags:
 ---
 ## Any excuse to refactor
 
-The truth is, I love using my own site as a place to play around with new frontend tools and techniques. It's a great way for me to learn and break things in a low stakes way without having to go through the trouble of setting up a new project or diving into a refactor of something more complex. After spending some time with [Astro](https://astro.build) v1.x, I realized I'd finally found a static site generator I really vibed with. With the recent release of v2.0, I decided it was time to go all in.
+The truth is, I love using my own site as a place to play around with new frontend tools and techniques. It's a great way for me to learn and break things in a low stakes way without having to go through the trouble of setting up a new project or diving into a refactor of something more complex. After spending some time with [Astro](https://astro.build) 1.x, I realized I'd finally found a static site generator I really vibed with. With the recent release of 2.0, I decided it was time to go all in.
 
 There's no shortage of takes from folks across the dev web over the last year on why they like Astro. Up front, its own site touts two major features: excellent performance and "island architecture." These are both big, and part of what initially drew me and others in, but what really made Astro click for me was how familiar yet simple it felt after working with component-based UI frameworks like Vue, React, and Svelte.
 
@@ -19,7 +19,7 @@ There's no shortage of takes from folks across the dev web over the last year on
 
 Astro is written in JS, which for me meant no language barrier compared to something like Jekyll or Hugo whose respective languages aren't daily drivers for me. I get that there's a pile of reasons that those languages (and others) make sense for an SSG, but I was curious to see if any of them would trump the familiarity of working in JS/TS for the whole codebase of my site. *Spoiler: they didn't.*
 
-But there are lots of JS SSGs. What about Eleventy or Hexo? Their simplicity was attractive, but I wasn't sure how well they'd play with other JS tooling I might want or need, much less an entire framework. Their workflow and methodology also felt a little unfamiliar, like something I would have to spend some time learning before I could work with them. These aren't real criticisms, just an attempt to pin down whey they didn't stick for me.
+But there are lots of JS SSGs. What about Eleventy or Hexo? Their simplicity was attractive, but I wasn't sure how well they'd play with other JS tooling I might want or need, much less an entire framework. Their workflow and methodology also felt a little unfamiliar, like something I would have to commit some time to learning before I could work with them. These aren't real criticisms, just an attempt to pin down whey they didn't stick for me.
 
 ## Sometimes a framework
 
