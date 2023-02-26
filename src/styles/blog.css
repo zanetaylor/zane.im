@@ -1,16 +1,20 @@
 .content a {
-	@apply relative text-zinc-900 dark:text-zinc-100 font-bold;
+	@apply relative text-cyan-500 font-bold;
+}
+
+.content a:hover {
+	@apply text-zinc-800;
 }
 
 .content a::before {
 	content: '';
 
-	@apply absolute left-0 w-full bg-violet-600 transition-all duration-200 ease-in-out;
-	bottom: 3px;
-	height: 6px;
+	@apply absolute left-0 w-full bg-zinc-700 transition-all duration-200 ease-in-out;
+	bottom: 1px;
+	height: 3px;
 	z-index: -1;
 }
 
 .content a:hover::before {
-	@apply bottom-0 h-full;
+	@apply bottom-0 h-full bg-cyan-500;
 }
