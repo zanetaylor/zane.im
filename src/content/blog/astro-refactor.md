@@ -19,7 +19,7 @@ There's no shortage of takes from folks across the dev web over the last year on
 
 Astro is written in JS, which for me means no language barrier compared to something like Jekyll or Hugo whose respective languages aren't daily drivers for me. I get that there's a pile of reasons that those languages (and others) make sense for an SSG, but for me none of them have proven more compelling than the ability to work in JS/TS for the whole codebase.
 
-Other popular JS SSGs like Eleventy or Hexo were attractive, but their workflow and methodology also felt a little unfamiliar, like something I would have to spend some time learning before I could work with them. It was also less obvious at a glance how easily it would be to integrate UI framework components with them, should I need to. These aren't real criticisms, just an attempt to pin down whey they didn't stick for me.
+Other popular JS SSGs like [Eleventy](https://www.11ty.dev/) and [Hexo](https://hexo.io/) were attractive, but their workflow and methodology also felt a little unfamiliar, like something I would have to spend some time learning before I could work with them. It was also less obvious at a glance how easily it would be to integrate UI framework components with them, should I need to. These aren't real criticisms, just an attempt to pin down whey they didn't stick for me.
 
 ## Sometimes a framework
 
