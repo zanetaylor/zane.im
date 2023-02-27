@@ -4,6 +4,8 @@ publishDate: 2023-02-23T02:07:48.950Z
 title: Hello blog!
 description: It's posting time.
 ---
+![It's posting time](/images/uploads/7compf.jpg)
+
 Alright let's get this obligatory inaugural post of the way y'all.
 
 I've put off properly starting a blog for ***so long.*** It's actually kind of embarrassing. I don't even have a unique excuse, just all of the usual suspects. "No one will read it. I have nothing interesting to say. I'm too busy. What if people do read it but don't like it. What's it actually going to be about? What's the point?" And so on. I know, lame as fuck.
