@@ -14,4 +14,4 @@ In my defense, I technically did halfheartedly start a blog a few times over the
 
 Well, enough is enough. Depending on where you get your truths, it's either the best or worst time to be blogging (same as last year?), so when better to buck / embrace the trend and get this thing on the rails.
 
-What can you expect to see here in the future? Well, follow me to find out together. I'd hate to spoil the surprise.
+What can you expect to see here in the future? Follow me to find out together. I'd hate to spoil the surprise.
