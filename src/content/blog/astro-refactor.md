@@ -1,7 +1,7 @@
 ---
 draft: false
 publishDate: 2023-02-25T22:50:04.516Z
-title: So I rebuilt with Astro
+title: So I rebuilt the site with Astro
 description: That's right, another ode to the hot new(ish) static site generator
   on the block. I'll try to keep this short.
 tags:
