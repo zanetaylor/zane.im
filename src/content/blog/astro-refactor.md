@@ -52,4 +52,4 @@ The point I actually want to get to here is that the way Astro handles UI compon
 
 To wrap up I'll mention that part of the reason the 2.0 release spurred me to finish migrating the site to Astro was the new features for working with content, namely [content collections](https://docs.astro.build/en/guides/content-collections/). Astro was already pretty dandy when it came to building a blog, but the content collections functionality made it even easier and more intuitive to work with sets of MD or MDX files for a blog or any other site driven by local content files.
 
-The dev experience with Astro so far has been excellent, and the results impressive I'm looking forward to expanding the site on its new foundation over the next several months.
+The dev experience with Astro so far has been excellent, and the results impressive! I'm looking forward to expanding the site on its new foundation over the next several months.
