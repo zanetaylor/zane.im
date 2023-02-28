@@ -25,6 +25,22 @@ Other popular JS SSGs like [Eleventy](https://www.11ty.dev/) and [Hexo](https://
 
 If you're familiar with component-based frameworks, Astro is easy to pick up, since its basic application structure and native component system are similar. But, you don't actually need any of those frameworks (or their complexity, build processes, or performance overhead) to build a site. Astro doesn't include or push you toward any particular UI framework, or even toward a framework in general. Together, these two features are huge for me.
 
+```
+---
+import Button from './Button.astro';
+
+// Access passed-in component props, like `<X title="Hello, World" />`
+const {title} = Astro.props;
+// Fetch external data, even from a private API or database
+const data = await fetch('SOME_SECRET_API_URL/users').then(r => r.json());
+---
+<div>
+  <h1>{title}</h1>
+  <Button title="Da Button" />
+</div>
+```
+Look, an Astro component! Easy.
+
 ## Island time
 
 This brings me to the "island" stuff. Basically, islands are how Astro handles components with runtime JS on any given page. Whether just a native Astro component with client JS or one written in your favorite framework, Astro wraps it in an island during the build and lazyloads it in the browser. If you've got component JS that doesn't actually need to run in the client, Astro will just run it during the build and ship the resulting HTML, sans JS. I'm really oversimplifying it, so you should take a look at [their explanation](https://docs.astro.build/en/concepts/islands/), but it's pretty cool.
