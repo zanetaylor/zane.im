@@ -16,6 +16,11 @@ const __dirname = dirname(__filename);
 // https://astro.build/config
 export default defineConfig({
   site: 'https://zane.im',
+  markdown: {
+    shikiConfig: {
+      theme: 'material-theme-palenight'
+    }
+  },
   vite: {
     resolve: {
       alias: {
