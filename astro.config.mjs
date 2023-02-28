@@ -18,7 +18,7 @@ export default defineConfig({
   site: 'https://zane.im',
   markdown: {
     shikiConfig: {
-      theme: 'material-theme-palenight'
+      theme: 'github-dark'
     }
   },
   vite: {

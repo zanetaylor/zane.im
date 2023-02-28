@@ -25,7 +25,7 @@ Other popular JS SSGs like [Eleventy](https://www.11ty.dev/) and [Hexo](https://
 
 If you're familiar with component-based frameworks, Astro is easy to pick up, since its basic application structure and native component system are similar. But, you don't actually need any of those frameworks (or their complexity, build processes, or performance overhead) to build a site. Astro doesn't include or push you toward any particular UI framework, or even toward a framework in general. Together, these two features are huge for me.
 
-```
+```astro
 ---
 import Button from './Button.astro';
 
