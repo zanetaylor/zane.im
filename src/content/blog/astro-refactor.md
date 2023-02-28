@@ -29,9 +29,10 @@ If you're familiar with component-based frameworks, Astro is easy to pick up, si
 ---
 import Button from './Button.astro';
 
-// Access passed-in component props, like `<X title="Hello, World" />`
+// Access passed-in component props
 const {title} = Astro.props;
-// Fetch external data, even from a private API or database
+
+// Fetch external data from wherever
 const data = await fetch('SOME_SECRET_API_URL/users').then(r => r.json());
 ---
 <div>
