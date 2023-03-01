@@ -1,0 +1,30 @@
+---
+// Component Imports
+import MainLayout from '$/layouts/Main.astro'
+
+import BlogHeader from '$/components/BlogHeader.astro'
+
+---
+
+<MainLayout>
+
+	<div class="wrap relative px-8 dark:text-slate-50">
+
+		<BlogHeader />
+
+		<main class="content">
+			<section class="intro	m-auto max-w-5xl">
+				<h1>Oops.</h1>
+        <p class="text-2xl">Whatever you're looking for, it's not here. 😞</p>
+			</section>
+		</main>
+		
+	</div>
+
+</MainLayout>
+
+<style>
+	h1 {
+		@apply font-display leading-snug lg:leading-normal font-bold text-6xl lg:text-7xl my-4 lg:my-8;
+	}
+</style>
