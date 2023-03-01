@@ -3,6 +3,7 @@
 import MainLayout from '$/layouts/Main.astro'
 
 import BlogHeader from '$/components/BlogHeader.astro'
+import Footer from '$/components/Footer.astro'
 import BlogPostPreview from '$/components/BlogPostPreview.astro'
 
 import { getCollection } from 'astro:content'
@@ -19,8 +20,6 @@ const posts = await getCollection('blog', ({ data }) => {
 
 <MainLayout>
 
-	<!-- <div class="overlay"></div> -->
-
 	<div class="wrap relative px-8 dark:text-slate-50">
 
 		<BlogHeader />
@@ -36,6 +35,8 @@ const posts = await getCollection('blog', ({ data }) => {
 		</main>
 		
 	</div>
+
+	<Footer/>
 
 </MainLayout>
 
