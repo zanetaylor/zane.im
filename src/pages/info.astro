@@ -1,0 +1,44 @@
+---
+// Component Imports
+import MainLayout from '$/layouts/Main.astro'
+
+import BlogHeader from '$/components/BlogHeader.astro'
+import Footer from '$/components/Footer.astro'
+
+---
+
+<MainLayout>
+
+	<div class="wrap relative px-8 dark:text-slate-50">
+
+		<BlogHeader />
+
+		<main class="content">
+			<section class="intro	m-auto max-w-5xl">
+				<h1>Info</h1>
+				<h2>Alta Planning + Design</h2>
+				<dl>
+					<dt>Alta</dt>
+					<dt>LA River Path</dt>
+					<dt>Get There Oregon</dt>
+					<dt>Spare the Air Youth</dt>
+				</dl>
+			</section>
+		</main>
+		
+	</div>
+
+	<Footer/>
+
+</MainLayout>
+
+<style>
+	h1 {
+		@apply font-display leading-snug lg:leading-normal font-bold text-6xl lg:text-7xl my-4 lg:my-8;
+
+		/* color: #7C4EFF;
+		background: -webkit-linear-gradient(45deg, #7C4EFF, #A21CAF);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent; */
+	}
+</style>
