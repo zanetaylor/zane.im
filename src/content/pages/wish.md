@@ -1,5 +1,5 @@
 ---
-title: Wishlists
+title: Wishlist
 ---
 
 A work in progress, inspired by [this](https://taylor.town/wish-manifesto).
