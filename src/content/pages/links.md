@@ -10,6 +10,7 @@ This is a list of links to stuff on the internet I like. You know, like every pe
 
 ### [cabel.com](https://cabel.com)
 
+### [jonathanneeley.substack.com](https://jonathanneeley.substack.com/)
   
 ## Art
 
