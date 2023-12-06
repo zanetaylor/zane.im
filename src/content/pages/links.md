@@ -6,14 +6,16 @@ This is a list of links to stuff on the internet I like. You know, like every pe
 
 ## Blogs
 
-### [taylor.town](https://taylor.town)
+#### [taylor.town](https://taylor.town)
 
-### [cabel.com](https://cabel.com)
+#### [cabel.com](https://cabel.com)
 
-### [jonathanneeley.substack.com](https://jonathanneeley.substack.com/)
+#### [Jonathan Neeley](https://jonathanneeley.substack.com/)
   
-## Art
+## Art & media
 
-  
+#### [NYPL Digital Collections](https://digitalcollections.nypl.org/)
+
+#### [Digital Comic Museum](https://digitalcomicmuseum.com/)
 
 ## Tech
