@@ -2,6 +2,7 @@
 title: Wishlists
 ---
 
+A work in progress, inspired by [this](https://taylor.town/wish-manifesto).
 ### DIY
 
 - 3D printer
