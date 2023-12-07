@@ -12,9 +12,9 @@ This is a list of links to stuff on the internet I like. You know, like every pe
 
 #### [Jonathan Neeley](https://jonathanneeley.substack.com/)
 
-### [Daniel Immke](https://daniel.do/)
+#### [Daniel Immke](https://daniel.do/)
 
-### [Josh W. Comeau](https://www.joshwcomeau.com/)
+#### [Josh W. Comeau](https://www.joshwcomeau.com/)
   
 ## Art & media
 
