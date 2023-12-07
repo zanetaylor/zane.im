@@ -11,6 +11,10 @@ This is a list of links to stuff on the internet I like. You know, like every pe
 #### [cabel.com](https://cabel.com)
 
 #### [Jonathan Neeley](https://jonathanneeley.substack.com/)
+
+### [Daniel Immke](https://daniel.do/)
+
+### [Josh W. Comeau](https://www.joshwcomeau.com/)
   
 ## Art & media
 
