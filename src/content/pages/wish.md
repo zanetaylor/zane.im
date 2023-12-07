@@ -1,5 +1,6 @@
 ---
 title: Wishlist
+description: Here's a list of some things I'd like.
 ---
 
 A work in progress, inspired by [this](https://taylor.town/wish-manifesto).
