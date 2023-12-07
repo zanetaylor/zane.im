@@ -1,8 +1,9 @@
 ---
 title: Links
+description: This is a list of links to stuff on the internet I like.
 ---
 
-This is a list of links to stuff on the internet I like. You know, like every personal site had in the olden times! If that seems quaint, that's because it is. These are loosely categorized but in no particular order.
+You know, like every personal site had in the olden times! If that seems quaint, that's because it is. These are loosely categorized but in no particular order.
 
 ## Personal blogs
 
