@@ -7,19 +7,19 @@ import Map from '$/components/Map.svelte'
   <Map client:load />
   <div class="view">
     <div class="wrap">
-      <div class="content font-serif">
+      <div class="content font-serif [a]:light:text-neutral-800 [a]:dark:text-neutral-200">
         <h1><a class="h-card" href="https://zane.im"><span class="p-name">Zane Taylor</span></a> is a creative web engineer.</h1>
-        <p>He lives in Oregon, building digital products with code, data, maps, and open source. He's collaborated with clients big and small for two decades, and is always ready for a new challenge.</p>
+        <p class="text-2xl lg:text-3xl">He lives in Oregon, building digital products with code, data, maps, and open source. He's collaborated with clients big and small for two decades, and is always ready for a new challenge.</p>
         <h2>Need more?</h2>
-        <p class="text-2xl">Go ahead and <a class="dark:text-neutral-200" target="_blank" href="mailto:hey@zanetaylor.me">say hello</a> or <a class="dark:text-neutral-200" target="_blank" href="https://calendly.com/zanetaylor">schedule a chat</a>.</p>
+        <p class="text-xl lg:text-2xl">Go ahead and <a target="_blank" href="mailto:hey@zanetaylor.me">say hello</a> or <a  target="_blank" href="https://calendly.com/zanetaylor">schedule a chat</a>.</p>
 
         <h3>See also</h3>
         <ul class="text-lg">
-          <li><a class="dark:text-neutral-200" href="/zane-taylor-resume-spring-2023.pdf" target="_blank">Resume &rarr;</a></li>
-          <li><a class="dark:text-neutral-200" href="https://www.linkedin.com/in/iamzanetaylor" target="_blank" rel="me">LinkedIn &rarr;</a></li>
-          <li><a class="dark:text-neutral-200" href="https://github.com/zanetaylor" target="_blank" rel="me">Github &rarr;</a></li>
-          <li><a class="dark:text-neutral-200" href="https://letterboxd.com/zanetaylor" target="_blank" rel="me">Letterboxd &rarr;</a></li>
-          <li><a class="dark:text-neutral-200" href="https://pixelfed.social/i/web/profile/186848319497179136" target="_blank" rel="me">Pixelfed &rarr;</a></li>
+          <li><a href="/zane-taylor-resume-spring-2023.pdf" target="_blank">Resume &rarr;</a></li>
+          <li><a href="https://www.linkedin.com/in/iamzanetaylor" target="_blank" rel="me">LinkedIn &rarr;</a></li>
+          <li><a href="https://github.com/zanetaylor" target="_blank" rel="me">Github &rarr;</a></li>
+          <li><a href="https://letterboxd.com/zanetaylor" target="_blank" rel="me">Letterboxd &rarr;</a></li>
+          <li><a href="https://pixelfed.social/i/web/profile/186848319497179136" target="_blank" rel="me">Pixelfed &rarr;</a></li>
         </ul>
       </div>
     </div>
@@ -80,11 +80,11 @@ h2 {
 }
 h3 { @apply text-xl lg:text-2xl font-bold; }
 h2, h3 { @apply mb-1.5 }
-p { @apply text-lg lg:text-3xl leading-normal lg:leading-normal mb-12 max-w-6xl; }
+p { @apply leading-normal lg:leading-normal mb-12 max-w-6xl; }
 p, li {
   a {
     @apply relative no-underline transition-all duration-300;
-    color: #242424;
+    // color: #242424;
     background-size: 100% 300%;
     background-image: linear-gradient(transparent 24px, #7C4EFF 0);
     text-shadow: none;
