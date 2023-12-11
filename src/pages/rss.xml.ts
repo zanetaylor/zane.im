@@ -2,7 +2,7 @@ import rss from "@astrojs/rss"
 import { getCollection } from "astro:content"
 import { SITE } from '$/config'
 
-export const get = async () => {
+export async function GET(context) {
   const posts = await getCollection('blog', ({ data }) => {
     return data.draft !== true;
   })
@@ -10,7 +10,7 @@ export const get = async () => {
 	return rss({
 		title: SITE.title,
 		description: SITE.description,
-		site: import.meta.env.SITE,
+		site: context.site,
 		items: posts.map((post) => ({
 			title: post.data.title,
 			description: post.data.description,
