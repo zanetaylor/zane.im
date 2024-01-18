@@ -35,33 +35,40 @@ const resume = JSON.parse(resumeJSON)
 							<h1 class="mb-6 font-display leading-snug font-bold text-4xl lg:text-7xl text-zinc-800 dark:text-zinc-100">
 								Zane Taylor
 							</h1>
-							<h2 class="mb-12 lg:text-3xl">{resume.basics.label}</h2>
+							<h2 class="mb-12 text-2xl lg:text-3xl">{resume.basics.label}</h2>
 							<p class="lead text-2xl text-zinc-800 dark:text-zinc-400">
 								{resume.basics.summary}
 							</p>
 							{resume.basics.location.city}, {resume.basics.location.region}
-							{resume.basics.profiles}
+							{resume.basics.email}
+							{resume.basics.website}
+
+							<ul>
+							{resume.basics.profiles.map((p) => (
+								<li><a href={p.url}>{p.network}</a></li>
+							))}
+							</ul>
 						</header>
 						<main class="text-lg lg:text-xl text-zinc-700 dark:text-zinc-400">
 
-							<section class="flex">
-								<div class="w-3/4 pr-20">
+							<section class="md:flex">
+								<div class="md:w-3/4 md:pr-20">
 									<ResumeSectionTitle title="Experience"/>
 									<ResumeSectionExperience items={resume.work}/>
 								</div>
-								<div class="w-1/4">
+								<div class="md:w-1/4">
 									<ResumeSectionTitle title="Skills"/>
 									<ResumeSectionSkills items={resume.skills}/>
 								</div>
 							</section>
 						
-							<section class="flex">
-								<div class="w-1/2">
+							<section class="md:flex">
+								<div class="md:w-1/2">
 									<ResumeSectionTitle title="Education"/>
 									<ResumeSectionEducation items={resume.education}/>
 								</div>
 								
-								<div class="w-1/2">
+								<div class="md:w-1/2">
 									<ResumeSectionTitle title="Volunteering"/>
 									<ResumeSectionVolunteering items={resume.volunteer}/>
 								</div>

@@ -2,8 +2,9 @@
 const { items } = Astro.props;
 ---
 
+<div class="flex flex-wrap basis-1/2 md:block">
 {items.map((p) => (
-  <div class="mb-8">
+  <div class="flex-none w-1/2 mb-8">
     <h4 class="text-cyan-500 font-bold mb-2">{p.name}</h3>
       <ul>
       {p.keywords.map((p) => (
@@ -12,3 +13,4 @@ const { items } = Astro.props;
       </ul>
   </div>
 ))}
+</div>
