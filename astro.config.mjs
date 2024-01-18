@@ -4,8 +4,6 @@ import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
-import sentry from "@sentry/astro";
-import spotlightjs from "@spotlightjs/astro";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -31,5 +29,5 @@ export default defineConfig({
       }
     }
   },
-  integrations: [tailwind(), svelte(), sentry(), spotlightjs()]
+  integrations: [tailwind(), svelte()]
 });
