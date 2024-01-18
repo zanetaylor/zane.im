@@ -1,0 +1,14 @@
+---
+const { items } = Astro.props;
+---
+
+{items.map((p) => (
+  <div class="mb-8">
+    <h4 class="text-cyan-500 font-bold mb-2">{p.name}</h3>
+      <ul>
+      {p.keywords.map((p) => (
+        <li>{p}</li>
+      ))}
+      </ul>
+  </div>
+))}

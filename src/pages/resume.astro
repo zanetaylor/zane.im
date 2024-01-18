@@ -3,6 +3,12 @@ import MainLayout from '$/layouts/Main.astro'
 
 import Footer from '$/components/Footer.astro'
 
+import ResumeSectionTitle from '$/components/ResumeSectionTitle.astro'
+import ResumeSectionExperience from '$/components/ResumeSectionExperience.astro'
+import ResumeSectionSkills from '$/components/ResumeSectionSkills.astro'
+import ResumeSectionEducation from '$/components/ResumeSectionEducation.astro'
+import ResumeSectionVolunteering from '$/components/ResumeSectionVolunteering.astro'
+
 import '$/styles/blog.css'
 
 const response = await fetch(
@@ -22,7 +28,7 @@ const resume = JSON.parse(resumeJSON)
 
 		<div class="px-8">
 
-			<div class="m-auto max-w-5xl">
+			<div class="m-auto max-w-6xl">
 				<article class="content">
 					<!-- <div> -->
 						<header class="mt-10 mb-12 lg:mt-12 lg:mb-14">
@@ -38,40 +44,28 @@ const resume = JSON.parse(resumeJSON)
 						</header>
 						<main class="text-lg lg:text-xl text-zinc-700 dark:text-zinc-400">
 
-							<h2 class="text-4xl font-bold text-[#7C4EFF] mb-10">Experience</h2>
-
-							{resume.work.map((p) => (
-								<div class="mb-12">
-									<h3 class="text-3xl text-cyan-500 font-bold mb-2">{p.position} <span class="float-right font-normal text-xl">{p.startDate} - {p.endDate ? p.endDate : 'Now'}</span></h3>
-									<h4 class="text-2xl mb-3">{p.name} <span class="float-right font-normal">{p.location}</span></h4>
-									<p set:html={p.summary.replace(/(\r\n|\r|\n)/g, '<br>')}></p>
-									<ul>{p.highlights}</ul>
+							<section class="flex">
+								<div class="w-3/4 pr-20">
+									<ResumeSectionTitle title="Experience"/>
+									<ResumeSectionExperience items={resume.work}/>
 								</div>
-							))}
-
-							<h2>Education</h2>
-
-							{resume.education.map((p) => (
-								<div>
-									<h3>{p.institution}</h3>
-									{p.area}
-									{p.startDate}
-									{p.endDate}
-									{p.summary}
-									{p.highlights}
+								<div class="w-1/4">
+									<ResumeSectionTitle title="Skills"/>
+									<ResumeSectionSkills items={resume.skills}/>
 								</div>
-							))}
-
-							<h2>Volunteering</h2>
-
-							{resume.volunteer.map((p) => (
-								<div>
-									<h3>{p.organization}</h3>
-									{p.position}
-									{p.startDate}
-									{p.endDate}
+							</section>
+						
+							<section class="flex">
+								<div class="w-1/2">
+									<ResumeSectionTitle title="Education"/>
+									<ResumeSectionEducation items={resume.education}/>
 								</div>
-							))}
+								
+								<div class="w-1/2">
+									<ResumeSectionTitle title="Volunteering"/>
+									<ResumeSectionVolunteering items={resume.volunteer}/>
+								</div>
+							</section>
 
 						</main>
 					<!-- </div> -->
