@@ -1,4 +1,6 @@
 ---
+import dayjs from 'dayjs'
+
 const { items } = Astro.props;
 ---
 
@@ -6,7 +8,7 @@ const { items } = Astro.props;
   <div class="mb-8">
     <h3 class="text-2xl text-cyan-500 font-bold mb-2">{p.institution}</h3>
     {p.area}
-    <p>{p.startDate} -  {p.endDate}</p>
+    <p>{dayjs(p.startDate).format('YYYY')} - {p.endDate ? dayjs(p.endDate).format('YYYY') : 'Now'}</p>
     {p.summary}
     {p.highlights}
   </div>

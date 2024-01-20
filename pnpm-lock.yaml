@@ -20,6 +20,9 @@ dependencies:
   astro:
     specifier: 4.1.3
     version: 4.1.3(sass@1.69.7)(typescript@5.3.3)
+  dayjs:
+    specifier: ^1.11.10
+    version: 1.11.10
   maplibre-gl:
     specifier: ^2.4.0
     version: 2.4.0
@@ -1402,6 +1405,10 @@ packages:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
     hasBin: true
+    dev: false
+
+  /dayjs@1.11.10:
+    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
     dev: false
 
   /debug@2.6.9:
