@@ -26,3 +26,6 @@ content:
       - name: body
         label: Body
         type: rich-text
+media:
+  input: public/images/uploads
+  output: /images/uploads
