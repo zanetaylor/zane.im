@@ -3,6 +3,8 @@ content:
     label: Posts
     path: src/content/blog
     type: collection
+    view:
+      fields: [ title, draft, publishDate ]
     fields:
       - name: draft
         label: Draft
