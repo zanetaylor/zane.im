@@ -18,3 +18,4 @@ It has text, links, colors, and smells like fresh baked cookies.
 - Svelte
 - TailwindCSS
 - MapLibre
+- Pages CMS
