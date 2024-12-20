@@ -2,7 +2,7 @@
 
 It has text, links, colors, and smells like fresh baked cookies.
 
-### Featuring
+## Featuring
 
 - Basic info
 - Contact details
@@ -12,7 +12,7 @@ It has text, links, colors, and smells like fresh baked cookies.
 - Blog (coming soon)
 - Easter eggs?
 
-### Made with
+## Made with
 
 - [Astro](https://astro.build/)
 - [Svelte](https://svelte.dev/)
