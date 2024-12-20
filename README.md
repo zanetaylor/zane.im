@@ -14,8 +14,9 @@ It has text, links, colors, and smells like fresh baked cookies.
 
 ### Made with
 
-- Astro
-- Svelte
-- TailwindCSS
-- MapLibre
-- Pages CMS
+- [Astro](https://astro.build/)
+- [Svelte](https://svelte.dev/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [MapLibre GL](https://github.com/maplibre/maplibre-gl-js)
+- [Pages CMS](https://pagescms.org/)
+- 
