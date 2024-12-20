@@ -9,7 +9,7 @@ import BlogPostPreview from '$/components/BlogPostPreview.astro'
 import { getCollection } from 'astro:content'
 
 let title = 'Blog'
-let description = 'Let me just say.'
+let description = 'Inconsistently valuable but consistently infrequent jottings down.'
 let permalink = 'https://zane.im/blog/'
 
 const posts = await getCollection('blog', ({ data }) => {
@@ -20,14 +20,18 @@ const posts = await getCollection('blog', ({ data }) => {
 
 <MainLayout>
 
-	<div class="wrap relative px-8 dark:text-slate-50">
+	<div class="wrap relative px-8 dark:text-gray-50">
 
 		<BlogHeader />
 
 		<main class="content">
 			<section class="intro	m-auto max-w-5xl">
-				<h1>{title}</h1>
-				<!-- <p>{description}</p> -->
+				<!-- <h1 class="mb-6 font-display leading-snug font-bold text-4xl lg:text-6xl text-zinc-800 dark:text-zinc-100">{title}</h1>
+				<p class="text-2xl text-zinc-800 dark:text-zinc-400">{description}</p> -->
+				<header class="mt-10 mb-12 lg:mt-12 lg:mb-14">
+					<h1 class="mb-6 font-display leading-snug font-bold text-4xl lg:text-6xl text-gray-800 dark:text-gray-100">{title}</h1>
+					<p class="text-2xl text-zinc-800 dark:text-zinc-400">{description}</p>
+				</header>
 			</section>
 			<section aria-label="Blog post list">
 				{posts.map((p) => <BlogPostPreview post={p} />)}
@@ -39,14 +43,3 @@ const posts = await getCollection('blog', ({ data }) => {
 	<Footer/>
 
 </MainLayout>
-
-<style>
-	h1 {
-		@apply font-display leading-snug lg:leading-normal font-bold text-6xl lg:text-7xl my-4 lg:my-8;
-
-		/* color: #7C4EFF;
-		background: -webkit-linear-gradient(45deg, #7C4EFF, #A21CAF);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent; */
-	}
-</style>
