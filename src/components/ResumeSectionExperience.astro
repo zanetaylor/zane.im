@@ -5,9 +5,9 @@ const { items } = Astro.props
 ---
 
 {items.map((p) => (
-  <div class="mb-12">
-    <h3 class="text-2xl text-cyan-500 font-bold mb-2">{p.position} <span class="float-right font-normal text-xl">{dayjs(p.startDate).format('MMM YYYY')} - {p.endDate ? dayjs(p.endDate).format('MMM YYYY') : 'Now'}</span></h3>
-    <h4 class="text-xl text-neutral-500 italic mb-3">{p.name} <span class="float-right font-normal">{p.location}</span></h4>
+  <div class="mb-10">
+    <h3 class="text-lg lg:text-2xl text-cyan-500 font-bold mb-2">{p.position} <span class="float-right font-normal lg:text-xl">{dayjs(p.startDate).format('MMM YYYY')} - {p.endDate ? dayjs(p.endDate).format('MMM YYYY') : 'Now'}</span></h3>
+    <h4 class="text-base lg:text-xl text-neutral-500 italic mb-3">{p.name} <span class="float-right font-normal">{p.location}</span></h4>
     <p set:html={p.summary.replace(/(\r\n|\r|\n)/g, '<br>')}></p>
   </div>
 ))}

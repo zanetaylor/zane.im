@@ -2,11 +2,11 @@
 const { items } = Astro.props;
 ---
 
-<div class="flex flex-wrap basis-1/2 md:block">
+<div class="flex flex-wrap basis-1/2 sm:block">
 {items.map((p) => (
-  <div class="flex-none mb-8">
+  <div class="flex-none mb-4 lg:mb-8">
     <h3 class="text-cyan-500 font-bold mb-2">{p.name}</h3>
-      <ul>
+      <ul class="sm:text-sm md:text-base">
       {p.keywords.map((p) => (
         <li>{p}</li>
       ))}
