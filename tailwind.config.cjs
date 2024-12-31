@@ -79,5 +79,11 @@ module.exports = {
         // require('@tailwindcss/forms'),
         // require('@tailwindcss/line-clamp'),
         // require('@tailwindcss/aspect-ratio'),
-    ]
+    ],
+    extend: {
+        screens: {
+            print: { raw: 'print' },
+            screen: { raw: 'screen' },
+        },
+    },
 };
