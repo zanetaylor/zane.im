@@ -16,11 +16,15 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await post.render()
+
+const title = post.data.title
+const description = post.data.description
+const permalink = `/${post.slug}`
 
 import '$/styles/blog.css'
 ---
-<MainLayout frontmatter={post.data}>
+<MainLayout {title} {description} {permalink} frontmatter={post.data}>
 
 		<div class="px-8">
 

@@ -9,11 +9,9 @@ import ResumeSectionSkills from '$/components/ResumeSectionSkills.astro'
 import ResumeSectionEducation from '$/components/ResumeSectionEducation.astro'
 import ResumeSectionVolunteering from '$/components/ResumeSectionVolunteering.astro'
 
-import '$/styles/blog.css'
-
 const title = 'Full Stack Web Enginer // Resume'
 const description = ''
-const permalink = 'https://zane.im/resume/'
+const permalink = '/resume'
 
 const response = await fetch(
 	'https://api.github.com/gists/af71bf672a196bdda6d68cd19ee856ef',
@@ -29,6 +27,7 @@ const resume = JSON.parse(resumeJSON)
 
 const iconSize = 26
 
+import '$/styles/blog.css'
 ---
 <MainLayout title={title} description={description} permalink={permalink}>
 
