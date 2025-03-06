@@ -9,10 +9,10 @@ const { items } = Astro.props
     <h3 class="text-lg lg:text-2xl text-cyan-500 font-bold mb-2">{p.position} <span class="float-right font-normal lg:text-xl">{dayjs(p.startDate).format('MMM YYYY')} - {p.endDate ? dayjs(p.endDate).format('MMM YYYY') : 'Now'}</span></h3>
     <h4 class="text-base lg:text-xl text-neutral-500 italic mb-3">{p.name} <span class="float-right font-normal">{p.location}</span></h4>
     <p set:html={p.summary.replace(/(\r\n|\r|\n)/g, '<br>')} class="mb-4"></p>
-    <ul class="list-disc list-outside pl-8 text-base">
+    <ul class="list-disc list-outside pl-8 lg:text-base">
       {p.highlights.map((p) => (
         <li class="mb-1">{p}</li>
       ))}
-      </ul>
+    </ul>
   </div>
 ))}

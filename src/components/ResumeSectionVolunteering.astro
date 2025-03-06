@@ -5,7 +5,7 @@ const { items } = Astro.props;
 ---
 
 {items.map((p) => (
-  <div class="mb-8">
+  <div class="sm:mb-4 lg:mb-8">
     <h3 class="text-lg lg:text-2xl text-cyan-500 font-bold mb-2">{p.organization} <span class="float-right font-normal lg:text-xl">{dayjs(p.startDate).format('YYYY')} - {p.endDate ? dayjs(p.endDate).format('YYYY') : 'Now'}</span></h3>
     <h4 class="text-base lg:text-xl text-neutral-500 italic mb-3">{p.position}</h4>
     {/* <p>{dayjs(p.startDate).format('YYYY')} - {p.endDate ? dayjs(p.endDate).format('YYYY') : 'Now'}</p> */}
