@@ -8,9 +8,9 @@ import BlogPostPreview from '$/components/BlogPostPreview.astro'
 
 import { getCollection } from 'astro:content'
 
-let title = 'Blog'
-let description = 'Inconsistently valuable but consistently infrequent jottings down.'
-let permalink = 'https://zane.im/blog/'
+const title = 'Blog'
+const description = 'Inconsistently valuable but consistently infrequent jottings down.'
+const permalink = 'https://zane.im/blog/'
 
 const posts = await getCollection('blog', ({ data }) => {
 	return data.draft !== true;
@@ -18,7 +18,7 @@ const posts = await getCollection('blog', ({ data }) => {
 
 ---
 
-<MainLayout>
+<MainLayout title={title} description={description} permalink={permalink}>
 
 	<div class="wrap relative px-8 dark:text-gray-50">
 

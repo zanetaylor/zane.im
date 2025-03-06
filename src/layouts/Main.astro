@@ -3,15 +3,22 @@ import { SITE } from '$/config'
 import BaseHead from '$/components/BaseHead.astro'
 
 import '$/styles/global.css'
+
+export interface Props {
+	title: string;
+	description: string;
+	permalink: string;
+}
+const { title, description, permalink } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
     <head>
-        <BaseHead title={SITE.title} description={SITE.description} />
+        <BaseHead title={title} description={description} permalink={permalink} />
         <link rel="alternate" type="application/rss+xml" title="Zane's Blog" href="https://zane.im/rss.xml" />
     </head>
-    <body class="text-gray-800 dark:text-gray-200 bg-gray-200 dark:bg-gray-900">
+    <body class="text-gray-800 dark:text-gray-200 bg-gray-200 dark:bg-zinc-900">
         <slot/>
     </body>
 </html>

@@ -1,10 +1,12 @@
 ---
+import { SITE } from '$/config'
+
 export interface Props {
 	title: string;
 	description: string;
 	permalink: string;
 }
-const { title, description, permalink } = Astro.props;
+const { title = '', description = SITE.description, permalink } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -14,8 +16,8 @@ const { title, description, permalink } = Astro.props;
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
+<title>{SITE.title + title}</title>
+<meta name="title" content={SITE.title + title} />
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->

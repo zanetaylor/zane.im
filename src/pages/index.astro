@@ -1,9 +1,16 @@
 ---
+import { SITE } from '$/config'
+
 import MainLayout from '$/layouts/Main.astro'
 import Map from '$/components/Map.svelte'
+
+const title = 'Creative Software Engineer'
+const description = SITE.title
+const permalink = 'https://zane.im/'
 ---
 
-<MainLayout>
+<MainLayout title={title} description={description} permalink={permalink}>
+
   <Map client:load />
   <div class="view">
     <div class="wrap">
@@ -26,6 +33,7 @@ import Map from '$/components/Map.svelte'
       </div>
     </div>
   </div>
+  
 </MainLayout>
 
 <style lang="scss">
