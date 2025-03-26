@@ -2,6 +2,7 @@
 draft: false
 publishDate: 2025-03-26
 title: Self serving
+description: Bringing it all in house
 ---
 ## Not ice cream
 
