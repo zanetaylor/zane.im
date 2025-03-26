@@ -1,6 +1,6 @@
 ---
 draft: false
-publishDate: 2023-02-25T22:50:04.516Z
+publishDate: 2023-03-14
 title: So I rebuilt the site with Astro
 description: Another ode to the hot new(ish) static site generator on the block.
   I'll try to keep this short.
@@ -40,6 +40,7 @@ const data = await fetch('SOME_SECRET_API_URL/users').then(r => r.json());
   <Button title="Da Button" />
 </div>
 ```
+
 Look, an Astro component! Easy.
 
 ## Island time
