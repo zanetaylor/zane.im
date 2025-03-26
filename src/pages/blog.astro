@@ -12,9 +12,11 @@ const title = 'Blog'
 const description = 'Inconsistently valuable but consistently infrequent jottings down.'
 const permalink = 'https://zane.im/blog/'
 
-const posts = await getCollection('blog', ({ data }) => {
-	return data.draft !== true;
-})
+const posts = (
+	await getCollection('blog', ({ data }) => {
+		return data.draft !== true;
+	})
+).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 
 ---
 
