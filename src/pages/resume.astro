@@ -3,11 +3,12 @@ import MainLayout from '$/layouts/Main.astro'
 
 import Footer from '$/components/Footer.astro'
 
-import ResumeSectionTitle from '$/components/ResumeSectionTitle.astro'
-import ResumeSectionExperience from '$/components/ResumeSectionExperience.astro'
-import ResumeSectionSkills from '$/components/ResumeSectionSkills.astro'
-import ResumeSectionEducation from '$/components/ResumeSectionEducation.astro'
-import ResumeSectionVolunteering from '$/components/ResumeSectionVolunteering.astro'
+import ResumeSectionTitle from '$/components/resume/ResumeSectionTitle.astro'
+import ResumeSectionExperience from '$/components/resume/ResumeSectionExperience.astro'
+import ResumeSectionSkills from '$/components/resume/ResumeSectionSkills.astro'
+import ResumeSectionEducation from '$/components/resume/ResumeSectionEducation.astro'
+import ResumeSectionLanguage from '$/components/resume/ResumeSectionLanguage.astro'
+import ResumeSectionVolunteering from '$/components/resume/ResumeSectionVolunteering.astro'
 
 const title = 'Full Stack Web Enginer // Resume'
 const description = ''
@@ -91,6 +92,8 @@ import '$/styles/blog.css'
 								<div class="sm:w-1/2 sm:pr-12 md:pr-20">
 									<ResumeSectionTitle title="Education"/>
 									<ResumeSectionEducation items={resume.education}/>
+									<ResumeSectionTitle title="Language"/>
+									<ResumeSectionLanguage items={resume.languages}/>
 								</div>
 								
 								<div class="sm:w-1/2">

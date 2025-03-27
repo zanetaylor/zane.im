@@ -1,0 +1,11 @@
+---
+import dayjs from 'dayjs'
+
+const { items } = Astro.props;
+---
+
+{items.map((p) => (
+  <div class="sm:mb-4 lg:mb-8">
+    <h3 class="text-lg lg:text-2xl text-cyan-500 font-bold mb-2">{p.language} <span class="float-right font-normal text-base leading-2 lg:text-xl">{p.fluency}</span></h3>
+  </div>
+))}
