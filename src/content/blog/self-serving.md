@@ -46,6 +46,6 @@ The networking set up ended up being the most tedious for me, but this is probab
 
 Along with the end-user focused media services, I also deployed containers to make system admin and maintenance less of a chore. Most of them were recommended by the guides already mentioned, and while I won't go over them here, you can find the list alongside the Compose config for them [in the repo](https://github.com/zanetaylor/homelab).
 
-## Wrapup
+## Wrap up
 
 And that's it! For now. I've already started down the rabbit hole of esoteric homelab type goofing around, and if I decide to compile a follow-up focused on that, I'll update this post with a link.
