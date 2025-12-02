@@ -22,7 +22,7 @@ So, what then? I briefly considered going full neckbeard and tossing out bids on
 
 ### Proxmox
 
-I had zero experience with Proxmox before looking into it for this project, although I'd heard of it. My initial plan was focused on the media server, and in that context I felt Proxmox might be overkill, but as my ambitions grew toward a full blown homelab, it became a more obvious choice. I wouldn't recommend it to anyone looking to deploy just a media server or a single node, but it has proven to be very flexible and reliable, and the initial setup was unexpectedly easy.
+I had zero experience with [Proxmox](https://proxmox.com/en/products/proxmox-virtual-environment/overview) before looking into it for this project, although I'd heard of it. My initial plan was focused on the media server, and in that context I felt Proxmox might be overkill, but as my ambitions grew toward a full blown homelab, it became a more obvious choice. I wouldn't recommend it to anyone looking to deploy just a media server or a single node, but it has proven to be very flexible and reliable, and the initial setup was unexpectedly easy.
 
 ### Docker
 
@@ -30,9 +30,7 @@ Let's take a moment and quietly air our grievances with Docker (and, gasp, Docke
 
 Now that we're done, we can calmly agree that it's a blessing for hobbyist projects and their low stakes needs. It makes deploying standardized application stacks unbelievably simple, and enables things that would just be too time consuming or difficult to bother with otherwise for a casual endeavor.
 
-My entire media server now runs on a single Docker instance in a Debian VM managed by Proxmox. This includes the library management tools as well as Plex itself, along with a smattering of related monitoring and automation tools to make the whole thing as low maintenance as possible, all configured in a single Compose file.
-
-### Media
+My entire media server now runs on a single Docker instance in a Debian VM managed by Proxmox. This includes the library management tools as well as [Plex](https://www.plex.tv/) itself, along with a smattering of related monitoring and automation tools to make the whole thing as low maintenance as possible, all configured in a single Compose file.
 
 ### Networking
 
